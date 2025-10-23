@@ -1,7 +1,10 @@
-package model;
-import java.time.LocalDateTime;
+package model.personnes;
 
-public abstract class user{
+import java.time.LocalDateTime;
+import model.Affichable;
+
+
+public abstract class Personne implements Affichable{
     protected int id;
     protected String nom; 
     protected String prenom;
@@ -9,7 +12,7 @@ public abstract class user{
     protected int numTel;
     protected LocalDateTime dateInscription;
 
-    public user(int id, String nom, String prenom, String email, int numTel, LocalDateTime dateInscription) {
+    public Personne (int id, String nom, String prenom, String email, int numTel, LocalDateTime dateInscription) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -42,6 +45,17 @@ public abstract class user{
         return dateInscription;
     }
     
+    @Override
+    public String toString() {
+        return "Personne{" +
+           "id=" + id +
+           ", nom='" + nom + '\'' +
+           ", prenom='" + prenom + '\'' +
+           ", email='" + email + '\'' +
+           ", numTel=" + numTel +
+           ", dateInscription=" + dateInscription +
+           '}';
+    }
     
     
     

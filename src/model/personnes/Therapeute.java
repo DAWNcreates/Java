@@ -1,18 +1,19 @@
-package model;
+package model.personnes;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import model.Affichable;
 
-public class therapeute extends user {
+public class Therapeute extends Personne implements Affichable{
     private String licenceUrl;
     private List<String> specialites;
     private String statut;
     private double tarifHoraire;
-    private Map<Integer, patient> patientsSuivis;
+    private Map<Integer, Patient> patientsSuivis;
 
-    public therapeute(int id, String nom, String prenom, String email, int numTel,
+    public Therapeute(int id, String nom, String prenom, String email, int numTel,
                       LocalDateTime dateInscription, String licenceUrl,
                       List<String> specialites, String statut, double tarifHoraire) {
         super(id, nom, prenom, email, numTel, dateInscription);
@@ -37,13 +38,13 @@ public class therapeute extends user {
     public void setTarifHoraire(double tarifHoraire) { this.tarifHoraire = tarifHoraire; }
 
 
-    public Map<Integer, patient> getPatientsSuivis() {
+    public Map<Integer, Patient> getPatientsSuivis() {
         return new HashMap<>(patientsSuivis); // copie pour sécurité
     }
 
 
 
-    public void ajouterPatient(patient p) {
+    public void ajouterPatient(Patient p) {
         if (p != null) {
             patientsSuivis.put(p.getId(), p);
         }
@@ -59,5 +60,18 @@ public class therapeute extends user {
         return patientsSuivis.containsKey(patientId);
     }
     
+    @Override
+    public String toString() {
+        return  super.toString()+ "Therapeute{" +
+           "licenceUrl='" + licenceUrl + '\'' +
+           ", specialites=" + specialites +
+           ", statut='" + statut + '\'' +
+           ", tarifHoraire=" + tarifHoraire +
+           ", patientsSuivis=" + patientsSuivis.size() + " patients" +
+           "} " ;
+    }
     
+    public void afficher (){
+        System.out.println("Je suis un therapeute :" +nom);
+    }
 }

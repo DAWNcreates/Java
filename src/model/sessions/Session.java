@@ -1,13 +1,18 @@
-package model;
+package model.sessions;
 
-public abstract class session {
+import model.personnes.Patient;
+import model.personnes.Therapeute;
+
+
+public sealed abstract class Session 
+permits SessionChat, SessionVideo,SessionIA{
     protected int id;
-    protected patient patient;        
-    protected therapeute therapeute;   
+    protected Patient patient;        
+    protected Therapeute therapeute;   
     protected int dateDebut;           
     protected int dureeMinutes;
 
-    public session(int id, patient patient, therapeute therapeute,
+    public Session(int id, Patient patient, Therapeute therapeute,
                    int dateDebut, int dureeMinutes) {
         this.id = id;
         this.patient = patient;
@@ -17,8 +22,8 @@ public abstract class session {
     }
 
 
-    public patient getPatient() { return patient; }
-    public therapeute getTherapeute() { return therapeute; }
+    public Patient getPatient() { return patient; }
+    public Therapeute getTherapeute() { return therapeute; }
     public int getId() { return id; }
     public int getDateDebut() { return dateDebut; }
     public int getDureeMinutes() { return dureeMinutes; }
@@ -37,6 +42,15 @@ public abstract class session {
         return dureeMinutes > 60;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Session{" +
+           "id=" + id +
+           ", patient=" + (patient != null ? patient.getNom() + " " + patient.getPrenom() : "null") +
+           ", therapeute=" + (therapeute != null ? therapeute.getNom() + " " + therapeute.getPrenom() : "null") +
+           ", dateDebut=" + dateDebut +
+           ", dureeMinutes=" + dureeMinutes +
+           '}';
+    }
     
 }

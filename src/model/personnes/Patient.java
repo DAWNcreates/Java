@@ -1,20 +1,21 @@
-package model;
+package model.personnes;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import model.Affichable;
+import model.sessions.Session;
 
-public final class patient extends user {
+public class Patient extends Personne implements Affichable {
     private List<String> objectifsTherapie;
-    private List<session> historiqueSessions;
+    private List<Session> historiqueSessions;
     private String modeCommunicationPrefere;
     private int noteSatisfaction;
 
-    public patient(int id, String nom, String prenom, 
+    public Patient(int id, String nom, String prenom, 
         String email,int numTel,LocalDateTime dateInscription,
-        List<String> objectifsTherapie, List<session> historiqueSessions, 
+        List<String> objectifsTherapie, List<Session> historiqueSessions, 
         String modeCommunicationPrefere, int noteSatisfaction ) {
         super(id, nom, prenom, email, numTel, dateInscription);
         this.objectifsTherapie = objectifsTherapie;
@@ -27,7 +28,7 @@ public final class patient extends user {
         return objectifsTherapie;
     }
 
-    public List<session> getHistoriqueSessions() {
+    public List<Session> getHistoriqueSessions() {
         return historiqueSessions;
     }
 
@@ -43,7 +44,7 @@ public final class patient extends user {
         this.objectifsTherapie = objectifsTherapie;
     }
 
-    public void setHistoriqueSessions(List<session> historiqueSessions) {
+    public void setHistoriqueSessions(List<Session> historiqueSessions) {
         this.historiqueSessions = historiqueSessions;
     }
 
@@ -55,13 +56,13 @@ public final class patient extends user {
         this.noteSatisfaction = noteSatisfaction;
     }
 
-    public void ajouterSession(session s) {
+    public void ajouterSession(Session s) {
         if (s != null) {
             historiqueSessions.add(s);
         }
     }
     
-    public void supprimerSession(session s) {
+    public void supprimerSession(Session s) {
         historiqueSessions.remove(s);
     }
     
@@ -70,6 +71,22 @@ public final class patient extends user {
     }
     
     public void trierSessionsParDate() {
-    historiqueSessions.sort((s1, s2) -> Integer.compare(s1.getDateDebut(), s2.getDateDebut()));
+    historiqueSessions.sort(Comparator.comparingInt(Session::getDateDebut));
     }
+    
+    @Override
+    public String toString() {
+        return super.toString() +"Patient{" +
+           "objectifsTherapie=" + objectifsTherapie +
+           ", historiqueSessions=" + historiqueSessions.size() + " sessions" +
+           ", modeCommunicationPrefere='" + modeCommunicationPrefere + '\'' +
+           ", noteSatisfaction=" + noteSatisfaction +
+           "} "  ;
+    }
+
+    @Override
+    public void afficher() {
+        System.out.println("Je suis un patient : " + nom);
+    }
+    
 }

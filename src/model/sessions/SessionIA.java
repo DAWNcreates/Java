@@ -1,12 +1,11 @@
-package model;
+package model.sessions;
 
-
-public class sessionIA extends session {
+public final class SessionIA extends Session {
     private String niveauRisque;
     private String resumeIA;
 
-    public sessionIA(int id, model.patient patient, 
-    model.therapeute therapeute, int dateDebut, 
+    public SessionIA(int id, model.personnes.Patient patient, 
+    model.personnes.Therapeute therapeute, int dateDebut, 
     int dureeMinutes,String niveauRisque, String resumeIA ) {
         super(id, patient, therapeute, dateDebut, dureeMinutes);
         this.niveauRisque = niveauRisque;
@@ -28,9 +27,12 @@ public class sessionIA extends session {
     public void setResumeIA(String resumeIA) {
         this.resumeIA = resumeIA;
     }
-
     
-    
-    
-    
+    @Override
+    public String toString() {
+        return  super.toString() +"SessionIA{" +
+           "niveauRisque='" + niveauRisque + '\'' +
+           ", resumeIA='" + resumeIA + '\'' +
+           "} " ;
+    }
 }
