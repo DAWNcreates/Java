@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import model.Affichable;
+import Interfaces.Affichable;
 
 import model.exceptions.PatientNotFoundException;
 

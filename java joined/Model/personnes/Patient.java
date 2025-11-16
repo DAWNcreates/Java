@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import model.Affichable;
+import Interfaces.Affichable;
 import model.sessions.Session;
 
 public class Patient extends Personne implements Affichable {

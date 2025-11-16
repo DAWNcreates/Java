@@ -12,7 +12,7 @@ public class Gestionnaire {
     protected boolean estActif;
     protected int pointsBonus;
 
-    public GestionnaireFinances(String nomGestionnaire, int idGestionnaire, String role, boolean estactif, int pointsBonus) {
+    public void GestionnaireFinances(String nomGestionnaire, int idGestionnaire, String role, boolean estactif, int pointsBonus) {
         this.nomGestionnaire = nomGestionnaire;
         this.idGestionnaire = idGestionnaire;
         this.role = role;

@@ -1,7 +1,7 @@
 package model.personnes;
 
 import java.time.LocalDateTime;
-import model.Affichable;
+import Interfaces.Affichable;
 
 
 public abstract class Personne implements Affichable{
