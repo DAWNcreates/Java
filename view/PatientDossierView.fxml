@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="500.0" prefWidth="800.0">
+    
+    <!-- Header -->
+    <top>
+        <VBox spacing="0">
+            <!-- Barre de navigation -->
+            <HBox alignment="CENTER_LEFT" spacing="15.0" 
+                  style="-fx-background-color: linear-gradient(to right, #2e7d32, #1b5e20); -fx-padding: 15 30;">
+                <Label text="🌿" style="-fx-font-size: 30px;"/>
+                <Label text="Dossier Patient" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <Button text="← Retour" 
+                        style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 20;"/>
+            </HBox>
+            
+            <!-- Informations patient -->
+            <HBox spacing="15.0" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 15 30;">
+                <!-- Avatar -->
+                <Label text="👤" style="-fx-font-size: 40px; -fx-background-color: #e8f5e9; -fx-padding: 15; -fx-background-radius: 30;"/>
+                
+                <!-- Info principale -->
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <Label fx:id="patientNameLabel" text="Jean Dupont" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                    <HBox spacing="20">
+                        <Label fx:id="emailLabel" text="📧 jean@email.com" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label fx:id="telephoneLabel" text="📱 +216 XX XXX XXX" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label fx:id="ageLabel" text="🎂 35 ans" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                    </HBox>
+                </VBox>
+                
+                <!-- Statistiques rapides -->
+                <VBox spacing="3" alignment="CENTER">
+                    <Label text="Sessions" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+                    <Label fx:id="totalSessionsLabel" text="12" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                </VBox>
+                
+                <Separator orientation="VERTICAL" prefHeight="40"/>
+                
+                <VBox spacing="3" alignment="CENTER">
+                    <Label text="Prochaine" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+                    <Label fx:id="nextSessionLabel" text="12/12" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #0288d1;"/>
+                </VBox>
+                
+                <!-- Boutons actions -->
+                <VBox spacing="8">
+                    <Button text="✏️ Modifier" prefWidth="100" prefHeight="28"
+                            style="-fx-background-color: #66bb6a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 11px;"/>
+                    <Button text="📄 Exporter" prefWidth="100" prefHeight="28"
+                            style="-fx-background-color: #0288d1; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 11px;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Contenu principal avec onglets -->
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #f5f5f5;">
+            
+            <!-- Tab Historique Sessions -->
+            <Tab text="📋 Historique">
+                <VBox spacing="10" style="-fx-background-color: #f5f5f5;">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Sessions Passées" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="➕ Nouvelle" prefHeight="30"
+                                style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 12px;"/>
+                    </HBox>
+                    
+                    <TableView fx:id="sessionsTable" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 8;">
+                        <columns>
+                            <TableColumn fx:id="sessionDateColumn" text="Date" prefWidth="100"/>
+                            <TableColumn fx:id="sessionTypeColumn" text="Type" prefWidth="80"/>
+                            <TableColumn fx:id="sessionTherapeuteColumn" text="Thérapeute" prefWidth="150"/>
+                            <TableColumn fx:id="sessionDureeColumn" text="Durée" prefWidth="70"/>
+                            <TableColumn fx:id="sessionStatutColumn" text="Statut" prefWidth="100"/>
+                            <TableColumn fx:id="sessionActionsColumn" text="Actions" prefWidth="180"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <!-- Tab Rapports -->
+            <Tab text="📝 Rapports">
+                <VBox spacing="10" style="-fx-background-color: #f5f5f5;">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Rapports Thérapeutiques" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="➕ Ajouter" prefHeight="30"
+                                style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 12px;"/>
+                    </HBox>
+                    
+                    <ListView fx:id="rapportsListView" VBox.vgrow="ALWAYS" 
+                             style="-fx-background-color: white; -fx-background-radius: 8;"/>
+                </VBox>
+            </Tab>
+            
+            <!-- Tab Informations Médicales -->
+            <Tab text="🏥 Médical">
+                <VBox spacing="12" style="-fx-background-color: #f5f5f5;">
+                    <padding>
+                        <Insets top="15" right="20" bottom="15" left="20"/>
+                    </padding>
+                    
+                    <VBox spacing="8">
+                        <Label text="Antécédents Médicaux" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <TextArea fx:id="antecedentsArea" wrapText="true" prefRowCount="3" editable="false"
+                                 style="-fx-border-color: #e0e0e0; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: white;"/>
+                    </VBox>
+                    
+                    <VBox spacing="8">
+                        <Label text="Allergies" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <TextArea fx:id="allergiesArea" wrapText="true" prefRowCount="2" editable="false"
+                                 style="-fx-border-color: #e0e0e0; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: white;"/>
+                    </VBox>
+                    
+                    <VBox spacing="8">
+                        <Label text="Traitements en Cours" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <TextArea fx:id="traitementsArea" wrapText="true" prefRowCount="3" editable="false"
+                                 style="-fx-border-color: #e0e0e0; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: white;"/>
+                    </VBox>
+                </VBox>
+            </Tab>
+            
+            <!-- Tab Contact d'Urgence -->
+            <Tab text="🚨 Urgence">
+                <VBox spacing="15" style="-fx-background-color: #fff3e0; -fx-padding: 20;">
+                    <Label text="⚠️ Personne à contacter en cas d'urgence" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #e65100;"/>
+                    
+                    <GridPane hgap="15" vgap="12">
+                        <Label text="Nom :" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+                        <Label fx:id="urgenceNomLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-text-fill: #333; -fx-font-size: 14px;"/>
+                        
+                        <Label text="Téléphone :" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+                        <Label fx:id="urgenceTelLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-text-fill: #333; -fx-font-size: 14px;"/>
+                        
+                        <Label text="Relation :" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+                        <Label fx:id="urgenceRelationLabel" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-text-fill: #333; -fx-font-size: 14px;"/>
+                    </GridPane>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

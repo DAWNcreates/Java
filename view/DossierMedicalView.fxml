@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="clinique.controller.DossierMedicalController"
+            prefHeight="500.0" prefWidth="800.0">
+    
+    <!-- Header -->
+    <top>
+        <VBox spacing="0">
+            <!-- Barre de navigation -->
+            <HBox alignment="CENTER_LEFT" spacing="15.0" 
+                  style="-fx-background-color: linear-gradient(to right, #2e7d32, #1b5e20); -fx-padding: 15 30;">
+                <Label text="🌿" style="-fx-font-size: 30px;"/>
+                <Label text="Monstera Clinic - Dossier Médical" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <HBox spacing="10">
+                    <Button text="📄 PDF" prefHeight="32" prefWidth="80"
+                            style="-fx-background-color: #0288d1; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 12px;"/>
+                    <Button text="🖨️ Imprimer" prefHeight="32" prefWidth="90"
+                            style="-fx-background-color: #66bb6a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 12px;"/>
+                    <Button text="← Retour" prefHeight="32" prefWidth="80"
+                            style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 12px;"/>
+                </HBox>
+            </HBox>
+            
+            <!-- En-tête Patient -->
+            <HBox spacing="15.0" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 12 30;">
+                <!-- Avatar -->
+                <Label text="👤" style="-fx-font-size: 40px; -fx-background-color: #e8f5e9; -fx-padding: 12; -fx-background-radius: 25;"/>
+                
+                <!-- Info principale -->
+                <VBox spacing="3" HBox.hgrow="ALWAYS">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label fx:id="patientNameLabel" text="Marie Dubois" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <Label text="Actif" style="-fx-font-size: 11px; -fx-padding: 3 10; -fx-background-color: #e8f5e9; -fx-text-fill: #2e7d32; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                    </HBox>
+                    <HBox spacing="15">
+                        <Label text="📧 marie.dubois@email.com" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+                        <Label text="📱 +33 6 12 34 56 78" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+                        <Label text="🎂 32 ans" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+                        <Label text="ID: #PAT-248" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+                    </HBox>
+                </VBox>
+                
+                <!-- Stats rapides -->
+                <HBox spacing="15">
+                    <VBox spacing="2" alignment="CENTER">
+                        <Label text="Sessions" style="-fx-font-size: 9px; -fx-text-fill: #666;"/>
+                        <Label text="24" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                    </VBox>
+                    
+                    <Separator orientation="VERTICAL" prefHeight="30"/>
+                    
+                    <VBox spacing="2" alignment="CENTER">
+                        <Label text="Rapports" style="-fx-font-size: 9px; -fx-text-fill: #666;"/>
+                        <Label text="18" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0288d1;"/>
+                    </VBox>
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Contenu principal avec onglets -->
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #f5f5f5;">
+            
+            <!-- Tab Informations Médicales -->
+            <Tab text="🏥 Médical">
+                <HBox spacing="12" style="-fx-background-color: #f5f5f5;">
+                    <padding>
+                        <Insets top="12" right="15" bottom="12" left="15"/>
+                    </padding>
+                    
+                    <!-- Colonne Gauche -->
+                    <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 12;">
+                        <Label text="Informations Médicales" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <Separator/>
+                        
+                        <VBox spacing="8">
+                            <HBox spacing="8">
+                                <Label text="Groupe sanguin:" style="-fx-text-fill: #666; -fx-min-width: 110; -fx-font-size: 11px;"/>
+                                <Label text="A+" style="-fx-font-weight: bold; -fx-text-fill: #d32f2f; -fx-font-size: 11px;"/>
+                            </HBox>
+                            
+                            <VBox spacing="3">
+                                <Label text="Allergies:" style="-fx-text-fill: #666; -fx-font-size: 11px;"/>
+                                <Label text="• Pénicilline (sévère)" style="-fx-font-weight: bold; -fx-text-fill: #d32f2f; -fx-padding: 0 0 0 15; -fx-font-size: 11px;"/>
+                                <Label text="• Arachides" style="-fx-font-weight: bold; -fx-text-fill: #d32f2f; -fx-padding: 0 0 0 15; -fx-font-size: 11px;"/>
+                            </VBox>
+                            
+                            <VBox spacing="3">
+                                <Label text="Antécédents:" style="-fx-text-fill: #666; -fx-font-size: 11px;"/>
+                                <TextArea fx:id="antecedentsArea" wrapText="true" prefRowCount="5" editable="false"
+                                         text="• Anxiété chronique (2020)&#10;• Épisodes dépressifs récurrents&#10;• Troubles du sommeil&#10;• Historique familial troubles anxieux"
+                                         style="-fx-border-color: #e0e0e0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-background-color: #fafafa; -fx-font-size: 11px;"/>
+                            </VBox>
+                            
+                            <VBox spacing="3">
+                                <Label text="Traitement actuel:" style="-fx-text-fill: #666; -fx-font-size: 11px;"/>
+                                <Label text="• TCC en cours" style="-fx-padding: 0 0 0 15; -fx-font-size: 11px;"/>
+                                <Label text="• Suivi mensuel (6 mois)" style="-fx-padding: 0 0 0 15; -fx-font-size: 11px;"/>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+                    
+                    <!-- Colonne Droite -->
+                    <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 12;">
+                        <Label text="Contact d'Urgence" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #d32f2f;"/>
+                        <Separator/>
+                        
+                        <VBox spacing="8">
+                            <HBox spacing="8">
+                                <Label text="Nom:" style="-fx-text-fill: #666; -fx-min-width: 80; -fx-font-size: 11px;"/>
+                                <Label text="Pierre Dubois" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                            </HBox>
+                            <HBox spacing="8">
+                                <Label text="Relation:" style="-fx-text-fill: #666; -fx-min-width: 80; -fx-font-size: 11px;"/>
+                                <Label text="Conjoint" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                            </HBox>
+                            <HBox spacing="8">
+                                <Label text="Téléphone:" style="-fx-text-fill: #666; -fx-min-width: 80; -fx-font-size: 11px;"/>
+                                <Label text="+33 6 98 76 54 32" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                            </HBox>
+                            <HBox spacing="8">
+                                <Label text="Email:" style="-fx-text-fill: #666; -fx-min-width: 80; -fx-font-size: 11px;"/>
+                                <Label text="pierre@email.com" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                            </HBox>
+                        </VBox>
+                        
+                        <Separator/>
+                        
+                        <Label text="Assurance" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        
+                        <VBox spacing="8">
+                            <HBox spacing="8">
+                                <Label text="Compagnie:" style="-fx-text-fill: #666; -fx-min-width: 80; -fx-font-size: 11px;"/>
+                                <Label text="Harmonie Mutuelle" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                            </HBox>
+                            <HBox spacing="8">
+                                <Label text="N° Police:" style="-fx-text-fill: #666; -fx-min-width: 80; -fx-font-size: 11px;"/>
+                                <Label text="HM-2024-7895" style="-fx-font-weight: bold; -fx-font-size: 11px;"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </HBox>
+            </Tab>
+            
+            <!-- Tab Historique Sessions -->
+            <Tab text="📋 Historique">
+                <VBox spacing="10" style="-fx-background-color: #f5f5f5;">
+                    <padding>
+                        <Insets top="12" right="15" bottom="12" left="15"/>
+                    </padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Sessions Thérapeutiques" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label text="Total: 24 sessions" style="-fx-text-fill: #666; -fx-font-size: 11px;"/>
+                    </HBox>
+                    
+                    <TableView fx:id="sessionsHistoryTable" VBox.vgrow="ALWAYS" 
+                              style="-fx-background-color: white; -fx-background-radius: 8;">
+                        <columns>
+                            <TableColumn text="Date" prefWidth="90"/>
+                            <TableColumn text="Type" prefWidth="70"/>
+                            <TableColumn text="Thérapeute" prefWidth="120"/>
+                            <TableColumn text="Durée" prefWidth="60"/>
+                            <TableColumn text="Thème" prefWidth="180"/>
+                            <TableColumn text="Rapport" prefWidth="80"/>
+                            <TableColumn text="Statut" prefWidth="80"/>
+                            <TableColumn text="Actions" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <!-- Tab Rapports -->
+            <Tab text="📝 Rapports">
+                <VBox spacing="10" style="-fx-background-color: #f5f5f5;">
+                    <padding>
+                        <Insets top="12" right="15" bottom="12" left="15"/>
+                    </padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Documents et Rapports" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="+ Ajouter" prefHeight="28"
+                                style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 11px;"/>
+                    </HBox>
+                    
+                    <TableView fx:id="documentsTable" VBox.vgrow="ALWAYS"
+                              style="-fx-background-color: white; -fx-background-radius: 8;">
+                        <columns>
+                            <TableColumn text="Type" prefWidth="120"/>
+                            <TableColumn text="Titre" prefWidth="220"/>
+                            <TableColumn text="Date" prefWidth="100"/>
+                            <TableColumn text="Auteur" prefWidth="130"/>
+                            <TableColumn text="Actions" prefWidth="210"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <!-- Tab Notes Thérapeutes -->
+            <Tab text="💬 Notes">
+                <VBox spacing="10" style="-fx-background-color: #f5f5f5;">
+                    <padding>
+                        <Insets top="12" right="15" bottom="12" left="15"/>
+                    </padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Notes des Thérapeutes" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="+ Nouvelle Note" prefHeight="28"
+                                style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 11px;"/>
+                    </HBox>
+                    
+                    <VBox spacing="10" VBox.vgrow="ALWAYS">
+                        <!-- Note 1 -->
+                        <HBox spacing="12" style="-fx-padding: 12; -fx-background-color: white; -fx-background-radius: 8;">
+                            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Label text="Dr. Jean Martin" style="-fx-font-weight: bold; -fx-text-fill: #2e7d32; -fx-font-size: 12px;"/>
+                                    <Label text="•" style="-fx-text-fill: #ccc;"/>
+                                    <Label text="18/11/2024" style="-fx-text-fill: #666; -fx-font-size: 10px;"/>
+                                </HBox>
+                                <Label text="Progrès significatifs dans la gestion de l'anxiété. La patiente rapporte une amélioration de la qualité du sommeil et une meilleure capacité à gérer les situations stressantes." 
+                                       wrapText="true" style="-fx-text-fill: #333; -fx-font-size: 11px;"/>
+                            </VBox>
+                        </HBox>
+                        
+                        <!-- Note 2 -->
+                        <HBox spacing="12" style="-fx-padding: 12; -fx-background-color: white; -fx-background-radius: 8;">
+                            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Label text="Dr. Sophie Laurent" style="-fx-font-weight: bold; -fx-text-fill: #2e7d32; -fx-font-size: 12px;"/>
+                                    <Label text="•" style="-fx-text-fill: #ccc;"/>
+                                    <Label text="05/11/2024" style="-fx-text-fill: #666; -fx-font-size: 10px;"/>
+                                </HBox>
+                                <Label text="Suite à notre session, la patiente montre une bonne adhésion aux techniques de relaxation. Recommande de continuer les exercices de respiration quotidiens." 
+                                       wrapText="true" style="-fx-text-fill: #333; -fx-font-size: 11px;"/>
+                            </VBox>
+                        </HBox>
+                        
+                        <!-- Note 3 -->
+                        <HBox spacing="12" style="-fx-padding: 12; -fx-background-color: white; -fx-background-radius: 8;">
+                            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                    <Label text="Dr. Marie Lefevre" style="-fx-font-weight: bold; -fx-text-fill: #2e7d32; -fx-font-size: 12px;"/>
+                                    <Label text="•" style="-fx-text-fill: #ccc;"/>
+                                    <Label text="22/10/2024" style="-fx-text-fill: #666; -fx-font-size: 10px;"/>
+                                </HBox>
+                                <Label text="Première séance très positive. La patiente est motivée et réceptive aux approches thérapeutiques proposées." 
+                                       wrapText="true" style="-fx-text-fill: #333; -fx-font-size: 11px;"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

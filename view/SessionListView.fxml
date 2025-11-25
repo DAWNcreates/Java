@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="500.0" prefWidth="800.0">
+    
+    <!-- Header -->
+    <top>
+        <VBox spacing="0">
+            <!-- Barre de navigation -->
+            <HBox alignment="CENTER_LEFT" spacing="15.0" 
+                  style="-fx-background-color: linear-gradient(to right, #2e7d32, #1b5e20); -fx-padding: 15 30;">
+                <Label text="🌿" style="-fx-font-size: 30px;"/>
+                <Label text="Gestion des Sessions" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <Button text="Déconnexion" 
+                        style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 20;"/>
+            </HBox>
+            
+            <!-- Filtres compacts -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #e8f5e9; -fx-padding: 10 30;">
+                <Label text="🔍" style="-fx-font-size: 16px;"/>
+                <DatePicker fx:id="dateFilter" promptText="Date" prefWidth="130" prefHeight="30"
+                           style="-fx-background-radius: 6;"/>
+                
+                <ComboBox fx:id="patientFilter" promptText="Patient" prefWidth="120" prefHeight="30"
+                         style="-fx-background-radius: 6;"/>
+                
+                <ComboBox fx:id="typeFilter" promptText="Type" prefWidth="100" prefHeight="30"
+                         style="-fx-background-radius: 6;"/>
+                
+                <ComboBox fx:id="statutFilter" promptText="Statut" prefWidth="100" prefHeight="30"
+                         style="-fx-background-radius: 6;"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <Button text="➕ Créer Session" prefHeight="30" prefWidth="130"
+                        style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 12px;"/>
+                
+                <Button text="👁️ Détails" fx:id="viewButton" disable="true" prefHeight="30" prefWidth="90"
+                        style="-fx-background-color: #0288d1; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 12px;"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Contenu principal -->
+    <center>
+        <VBox spacing="0" style="-fx-background-color: #f5f5f5;">
+            
+            <!-- Tableau des sessions -->
+            <TableView fx:id="sessionTable" VBox.vgrow="ALWAYS" 
+                       style="-fx-background-color: white;">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="40"/>
+                    <TableColumn fx:id="typeColumn" text="Type" prefWidth="70"/>
+                    <TableColumn fx:id="dateColumn" text="Date" prefWidth="90"/>
+                    <TableColumn fx:id="heureColumn" text="Heure" prefWidth="70"/>
+                    <TableColumn fx:id="patientColumn" text="Patient" prefWidth="130"/>
+                    <TableColumn fx:id="therapeuteColumn" text="Thérapeute" prefWidth="130"/>
+                    <TableColumn fx:id="dureeColumn" text="Durée" prefWidth="60"/>
+                    <TableColumn fx:id="statutColumn" text="Statut" prefWidth="90"/>
+                    <TableColumn fx:id="actionColumn" text="Actions" prefWidth="110"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    
+    <!-- Footer avec statistiques -->
+    <bottom>
+        <HBox spacing="25.0" alignment="CENTER" 
+              style="-fx-padding: 12; -fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0;">
+            
+            <VBox alignment="CENTER" spacing="3">
+                <Label text="📅 Aujourd'hui" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+                <Label fx:id="todayLabel" text="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+            </VBox>
+            
+            <Separator orientation="VERTICAL" prefHeight="30"/>
+            
+            <VBox alignment="CENTER" spacing="3">
+                <Label text="📹 Vidéo" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+                <Label fx:id="videoLabel" text="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0288d1;"/>
+            </VBox>
+            
+            <Separator orientation="VERTICAL" prefHeight="30"/>
+            
+            <VBox alignment="CENTER" spacing="3">
+                <Label text="💬 Chat" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+                <Label fx:id="chatLabel" text="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #66bb6a;"/>
+            </VBox>
+            
+            <Separator orientation="VERTICAL" prefHeight="30"/>
+            
+            <VBox alignment="CENTER" spacing="3">
+                <Label text="🤖 IA" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+                <Label fx:id="iaLabel" text="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #9c27b0;"/>
+            </VBox>
+            
+            <Separator orientation="VERTICAL" prefHeight="30"/>
+            
+            <VBox alignment="CENTER" spacing="3">
+                <Label text="✅ Terminées" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+                <Label fx:id="completedLabel" text="0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4caf50;"/>
+            </VBox>
+        </HBox>
+    </bottom>
+</BorderPane>

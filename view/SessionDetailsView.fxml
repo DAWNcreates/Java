@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="500.0" prefWidth="800.0">
+    
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" 
+              style="-fx-background-color: linear-gradient(to right, #2e7d32, #1b5e20); -fx-padding: 15 30;">
+            <Label text="🌿" style="-fx-font-size: 30px;"/>
+            <Label text="Détails de la Session" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <Button text="← Retour" 
+                    style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 20;"/>
+        </HBox>
+    </top>
+    
+    <!-- Contenu principal -->
+    <center>
+        <VBox spacing="15.0" style="-fx-background-color: #f5f5f5;">
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+            
+            <!-- Carte d'information principale -->
+            <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+                
+                <!-- En-tête avec type et statut -->
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <Label fx:id="typeLabel" text="📹 Session Vidéo" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                    <Label fx:id="statutLabel" text="Planifiée" 
+                           style="-fx-font-size: 13px; -fx-padding: 5 15; -fx-background-color: #e3f2fd; -fx-text-fill: #0288d1; -fx-background-radius: 12; -fx-font-weight: bold;"/>
+                    
+                    <Region HBox.hgrow="ALWAYS"/>
+                    
+                    <Label fx:id="idLabel" text="#S-001" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-font-weight: bold;"/>
+                </HBox>
+                
+                <Separator/>
+                
+                <!-- Informations en grille -->
+                <GridPane hgap="30" vgap="15">
+                    
+                    <!-- Patient -->
+                    <Label text="Patient" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #666;"/>
+                    <HBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER_LEFT">
+                        <Label text="👤" style="-fx-font-size: 18px;"/>
+                        <Label fx:id="patientLabel" text="Jean Dupont" style="-fx-font-size: 14px; -fx-text-fill: #333;"/>
+                    </HBox>
+                    
+                    <!-- Thérapeute -->
+                    <Label text="Thérapeute" GridPane.columnIndex="0" GridPane.rowIndex="1" 
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #666;"/>
+                    <HBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER_LEFT">
+                        <Label text="👨‍⚕️" style="-fx-font-size: 18px;"/>
+                        <Label fx:id="therapeuteLabel" text="Dr. Amina Khaled" style="-fx-font-size: 14px; -fx-text-fill: #333;"/>
+                    </HBox>
+                    
+                    <!-- Date et Heure -->
+                    <Label text="Date et Heure" GridPane.columnIndex="0" GridPane.rowIndex="2" 
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #666;"/>
+                    <HBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER_LEFT">
+                        <Label text="📅" style="-fx-font-size: 18px;"/>
+                        <Label fx:id="dateHeureLabel" text="12/12/2024 à 14:30" style="-fx-font-size: 14px; -fx-text-fill: #333;"/>
+                    </HBox>
+                    
+                    <!-- Durée -->
+                    <Label text="Durée" GridPane.columnIndex="0" GridPane.rowIndex="3" 
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #666;"/>
+                    <HBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="CENTER_LEFT">
+                        <Label text="⏱️" style="-fx-font-size: 18px;"/>
+                        <Label fx:id="dureeLabel" text="60 minutes" style="-fx-font-size: 14px; -fx-text-fill: #333;"/>
+                    </HBox>
+                    
+                    <!-- Paiement -->
+                    <Label text="Paiement" GridPane.columnIndex="0" GridPane.rowIndex="4" 
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #666;"/>
+                    <HBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER_LEFT">
+                        <Label text="💳" style="-fx-font-size: 18px;"/>
+                        <Label fx:id="paiementLabel" text="Payé" 
+                               style="-fx-font-size: 13px; -fx-padding: 3 10; -fx-background-color: #e8f5e9; -fx-text-fill: #2e7d32; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                    </HBox>
+                </GridPane>
+            </VBox>
+            
+            <!-- Section Motif et Notes -->
+            <HBox spacing="15" VBox.vgrow="ALWAYS">
+                
+                <!-- Motif -->
+                <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;">
+                    <Label text="📋 Motif de Consultation" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                    <TextArea fx:id="motifArea" wrapText="true" editable="false" VBox.vgrow="ALWAYS"
+                             style="-fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: #f9f9f9;"/>
+                </VBox>
+                
+                <!-- Notes -->
+                <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;">
+                    <Label text="📝 Notes Additionnelles" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                    <TextArea fx:id="notesArea" wrapText="true" editable="false" VBox.vgrow="ALWAYS"
+                             style="-fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: #f9f9f9;"/>
+                </VBox>
+            </HBox>
+            
+            <!-- Boutons d'action -->
+            <HBox spacing="15.0" alignment="CENTER">
+                <Button text="✅ Marquer Terminée" prefWidth="160" prefHeight="38"
+                        style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand; -fx-font-size: 13px;"/>
+                
+                <Button text="✏️ Modifier" prefWidth="120" prefHeight="38"
+                        style="-fx-background-color: #66bb6a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand; -fx-font-size: 13px;"/>
+                
+                <Button text="📝 Ajouter Rapport" prefWidth="160" prefHeight="38"
+                        style="-fx-background-color: #0288d1; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand; -fx-font-size: 13px;"/>
+                
+                <Button text="❌ Annuler Session" prefWidth="160" prefHeight="38"
+                        style="-fx-background-color: #d32f2f; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand; -fx-font-size: 13px;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

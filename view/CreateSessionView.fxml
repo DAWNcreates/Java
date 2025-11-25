@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="500.0" prefWidth="800.0">
+    
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" 
+              style="-fx-background-color: linear-gradient(to right, #2e7d32, #1b5e20); -fx-padding: 15 30;">
+            <Label text="🌿" style="-fx-font-size: 30px;"/>
+            <Label text="Créer une Session" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+            
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <Button text="← Retour" 
+                    style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 20;"/>
+        </HBox>
+    </top>
+    
+    <!-- Formulaire -->
+    <center>
+        <VBox spacing="15.0" style="-fx-background-color: #f5f5f5;">
+            <padding>
+                <Insets top="20" right="30" bottom="15" left="30"/>
+            </padding>
+            
+            <!-- Sélection du type de session -->
+            <HBox spacing="15.0" alignment="CENTER">
+                <ToggleButton fx:id="chatToggle" text="💬 Chat" prefWidth="240" prefHeight="70"
+                             style="-fx-background-color: white; -fx-border-color: #2e7d32; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-font-size: 15px; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                
+                <ToggleButton fx:id="videoToggle" text="📹 Vidéo" prefWidth="240" prefHeight="70"
+                             style="-fx-background-color: white; -fx-border-color: #0288d1; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-font-size: 15px; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                
+                <ToggleButton fx:id="iaToggle" text="🤖 IA" prefWidth="240" prefHeight="70"
+                             style="-fx-background-color: white; -fx-border-color: #9c27b0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-font-size: 15px; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            </HBox>
+            
+            <!-- Formulaire principal -->
+            <GridPane hgap="20" vgap="12" VBox.vgrow="ALWAYS">
+                
+                <!-- Patient -->
+                <Label text="Patient *" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                <ComboBox fx:id="patientCombo" promptText="Sélectionner un patient" 
+                         GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity" prefHeight="35.0"
+                         style="-fx-background-radius: 8;"/>
+                
+                <!-- Thérapeute -->
+                <Label text="Thérapeute *" GridPane.columnIndex="1" GridPane.rowIndex="0" 
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                <ComboBox fx:id="therapeuteCombo" promptText="Sélectionner un thérapeute" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity" prefHeight="35.0"
+                         style="-fx-background-radius: 8;"/>
+                
+                <!-- Date -->
+                <Label text="Date *" GridPane.columnIndex="0" GridPane.rowIndex="2" 
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                <DatePicker fx:id="datePicker" promptText="Sélectionner une date" 
+                           GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" prefHeight="35.0"
+                           style="-fx-background-radius: 8;"/>
+                
+                <!-- Heure -->
+                <Label text="Heure *" GridPane.columnIndex="1" GridPane.rowIndex="2" 
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                <ComboBox fx:id="heureCombo" promptText="Sélectionner l'heure" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" prefHeight="35.0"
+                         style="-fx-background-radius: 8;"/>
+                
+                <!-- Durée -->
+                <Label text="Durée *" GridPane.columnIndex="0" GridPane.rowIndex="4" 
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                <HBox spacing="15.0" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2">
+                    <RadioButton fx:id="duree30" text="30 min" selected="true"/>
+                    <RadioButton fx:id="duree45" text="45 min"/>
+                    <RadioButton fx:id="duree60" text="60 min"/>
+                    <RadioButton fx:id="duree90" text="90 min"/>
+                </HBox>
+                
+                <!-- Motif -->
+                <Label text="Motif de consultation" GridPane.columnIndex="0" GridPane.rowIndex="6" 
+                       GridPane.columnSpan="2"
+                       style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+                <TextArea fx:id="motifArea" promptText="Décrivez le motif..." wrapText="true" 
+                         prefRowCount="2" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="2"
+                         style="-fx-border-color: #e0e0e0; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;"/>
+            </GridPane>
+            
+            <!-- Message d'erreur -->
+            <Label fx:id="errorLabel" textFill="red" visible="false" wrapText="true" 
+                   style="-fx-font-size: 12px; -fx-padding: 8; -fx-background-color: #ffebee; -fx-background-radius: 8;"/>
+            
+            <!-- Boutons d'action -->
+            <HBox spacing="15.0" alignment="CENTER">
+                <Button text="✅ Créer" prefWidth="180" prefHeight="40.0"
+                        style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 15px; -fx-cursor: hand;"/>
+                
+                <Button text="❌ Annuler" prefWidth="180" prefHeight="40.0"
+                        style="-fx-background-color: #d32f2f; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 15px; -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
