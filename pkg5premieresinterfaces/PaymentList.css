@@ -1,0 +1,100 @@
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #0A7E56, #0D5E44);
+    -fx-padding: 24;
+    -fx-spacing: 20;
+    -fx-background-radius: 0 20 20 0;
+}
+.logo-circle {
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+    -fx-text-fill: #0A7E56;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.menu-title {
+    -fx-text-fill: #A7F3D0;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.menu-btn {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-padding: 12px 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 8px;
+}
+.menu-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+.menu-btn:pressed {
+    -fx-background-color: rgba(0,0,0,0.2);
+}
+.sidebar-footer {
+    -fx-text-fill: #D1FAE5;
+    -fx-font-size: 11px;
+    -fx-alignment: center;
+}
+/* MAIN BACKGROUND */
+.anchor-pane {
+    -fx-background-color: linear-gradient(to bottom right, #e6fff2, #d0ffd8);
+}
+
+/* VBox container */
+.v-box {
+    -fx-padding: 25;
+    -fx-spacing: 25;
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 5);
+}
+
+/* Page Title */
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #1b5e20, #43a047);
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-border-color: #43a047;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+/* Column headers */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #43a047, #1b5e20);
+}
+
+.table-view .column-header, .table-view .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Buttons */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5, 0, 0, 2);
+    -fx-text-fill: white;
+}
+
+/* Add Payment Button */
+#addPaymentBtn {
+    -fx-background-color: linear-gradient(to right, #66bb6a, #43a047);
+}
+#addPaymentBtn:hover {
+    -fx-background-color: linear-gradient(to right, #43a047, #1b5e20);
+}

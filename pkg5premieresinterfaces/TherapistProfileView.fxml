@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="500.0" stylesheets="@TherapistProfile.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- MAIN CONTAINER -->
+    <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" spacing="20" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <!-- HEADER: PROFILE IMAGE + INFO -->
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="h-box">
+            <ImageView fx:id="profileImage" fitHeight="100" fitWidth="100" preserveRatio="true" styleClass="image-view">
+                <image>
+                    <Image url="@profile1.png" />
+                </image>
+            </ImageView>
+
+            <VBox prefHeight="100.0" prefWidth="290.0" spacing="5">
+                <Label id="fullNameLabel" fx:id="fullNameLabel" text="Dr. Amira Haddad" />
+                <Label id="specialtyLabel" fx:id="specialtyLabel" text="Psycothérapeute en depression et anxiété" />
+                <Label id="emailLabel" fx:id="emailLabel" text="Email: amira.haddad@example.com" />
+                <Label id="phoneLabel" fx:id="phoneLabel" text="Tel: +216 22 334 556" />
+            </VBox>
+        </HBox>
+
+        <!-- BIO SECTION -->
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="450.0" spacing="10">
+            <Label style="-fx-font-weight:bold; -fx-text-fill:#2f7d32;" text="Biographie:" />
+            <TextArea id="bioTextArea" fx:id="bioTextArea" editable="false" prefHeight="162.0" prefWidth="450.0" text="Dr. Amira Haddad est une thérapeute spécialiste en anxiéte &#10;" wrapText="true" />
+        </VBox>
+
+        <!-- BUTTONS -->
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button id="closeBtn" fx:id="closeBtn" prefHeight="42.0" prefWidth="98.0" text="fermer" />
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>

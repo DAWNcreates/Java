@@ -1,0 +1,93 @@
+/* MAIN BACKGROUND */
+.anchor-pane {
+    -fx-background-color: linear-gradient(to bottom right, #e6fff2, #d0ffd8);
+}
+
+/* VBox container */
+.v-box {
+    -fx-padding: 25;
+    -fx-spacing: 25;
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 5);
+}
+
+/* HEADER HBOX */
+.h-box {
+    -fx-spacing: 25;
+    -fx-alignment: center-left;
+}
+
+/* PROFILE IMAGE */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0, 0, 5);
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-color: #43a047;
+    -fx-border-width: 2;
+}
+
+/* THERAPIST NAME */
+.label {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+/* Full Name */
+#fullNameLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #1b5e20, #43a047);
+}
+
+/* Specialty */
+#specialtyLabel {
+    -fx-font-size: 16px;
+    -fx-text-fill: #2e7d32;
+    -fx-font-style: italic;
+}
+
+/* Email & Phone Labels */
+#emailLabel, #phoneLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+/* BIO TEXTAREA */
+#bioTextArea {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-border-color: #43a047;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 3);
+}
+
+/* BUTTONS */
+.button {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5, 0, 0, 2);
+    -fx-text-fill: white;
+}
+
+/* EDIT BUTTON */
+.button#editBtn {
+    -fx-background-color: linear-gradient(to right, #66bb6a, #43a047);
+}
+.button#editBtn:hover {
+    -fx-background-color: linear-gradient(to right, #43a047, #1b5e20);
+}
+
+/* CLOSE BUTTON */
+.button#closeBtn {
+    -fx-background-color: linear-gradient(to right, #ef5350, #c62828);
+}
+.button#closeBtn:hover {
+    -fx-background-color: linear-gradient(to right, #c62828, #8e0000);
+}

@@ -1,0 +1,119 @@
+
+/* Base background – light, airy, serene */
+.root {
+    -fx-background-color: #f0f8f2; /* Pale mint green – fresh and calm */
+}
+
+/* === Typography & Headers === */
+.header {
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1b5e20; /* Rich dark green */
+    -fx-alignment: center;
+}
+
+.section-title {
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2e7d32; /* Medium-dark green */
+    -fx-padding: 12 0 6 0;
+}
+
+/* === Separators === */
+.separator .line {
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 1px;
+    -fx-opacity: 0.6;
+}
+
+/* === Buttons – Flowy, Rounded, Soft === */
+.button,
+.save-button {
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: white;
+    -fx-padding: 12 24;
+    -fx-background-radius: 28px;        /* Fully rounded, pill-like */
+    -fx-border-radius: 28px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(27, 94, 32, 0.2), 6, 0, 0, 2);
+    -fx-background-insets: 0;
+}
+
+/* Regular option buttons */
+.button {
+    -fx-background-color: #81c784; /* Soft green */
+}
+
+.button:hover {
+    -fx-background-color: #66bb6a;
+    -fx-effect: dropshadow(gaussian, rgba(27, 94, 32, 0.3), 8, 0, 0, 3);
+}
+
+.button:pressed {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1);
+}
+
+/* Save button – slightly more prominent */
+.save-button {
+    -fx-background-color: #00796b; /* Deep teal-green (elegant & distinctive) */
+    -fx-font-weight: 700;
+    -fx-margin-top: 16;
+}
+
+.save-button:hover {
+    -fx-background-color: #00695c;
+    -fx-effect: dropshadow(gaussian, rgba(0, 121, 107, 0.4), 8, 0, 0, 3);
+}
+
+.save-button:pressed {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0, 0, 1);
+}
+
+/* Ensure children stretch nicely */
+VBox > * {
+    -fx-max-width: Infinity;
+}
+.sidebar {
+    -fx-background-color: #304519;
+    -fx-padding: 24;
+    -fx-spacing: 20;
+    -fx-background-radius: 0 20 20 0;
+}
+.logo-circle {
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+    -fx-text-fill: #0A7E56;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.menu-title {
+    -fx-text-fill: #A7F3D0;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.menu-btn {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-padding: 12px 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 8px;
+}
+.menu-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+.menu-btn:pressed {
+    -fx-background-color: rgba(0,0,0,0.2);
+}
+.sidebar-footer {
+    -fx-text-fill: #D1FAE5;
+    -fx-font-size: 11px;
+    -fx-alignment: center;
+}

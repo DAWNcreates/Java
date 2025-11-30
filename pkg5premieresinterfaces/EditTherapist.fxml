@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="1204.0" prefWidth="907.0" stylesheets="@edittherapist.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <VBox fillWidth="false" prefHeight="1144.0" prefWidth="226.0" styleClass="sidebar">
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <ImageView fitHeight="76.0" fitWidth="149.0">
+                    <image>
+                        <Image url="@../../../../../Pictures/Screenshots/Capture%20d'écran%202025-11-24%20181034.png" />
+                    </image>
+                </ImageView>
+            </HBox>
+            <VBox prefHeight="1000.0" prefWidth="198.0" spacing="10" VBox.vgrow="ALWAYS">
+                <Button styleClass="menu-btn" text="Gestion patients" />
+                <Button prefHeight="42" prefWidth="168" styleClass="menu-btn-active" text="Gestion thérapeutes" />
+                <Button styleClass="menu-btn" text="Gestion sessions" />
+                <Button styleClass="menu-btn" text="Gestions rapports" />
+                <Button styleClass="menu-btn" text="Gestion paiements" />
+                <Button styleClass="menu-btn" text="Menu principal" />
+                <Button layoutX="10.0" layoutY="274.0" styleClass="menu-btn" text="LOG OUT " />
+            </VBox>
+        </VBox>
+    </left>
+    <top>
+        <HBox alignment="CENTER_RIGHT" prefHeight="26" prefWidth="1194" style="-fx-background-color: WHITE; -fx-padding: 12px 24px;">
+            <HBox alignment="CENTER_RIGHT" spacing="16">
+                <HBox prefHeight="36" prefWidth="381" spacing="8" style="-fx-background-color: #F1F5F9; -fx-padding: 6px 12px; -fx-background-radius: 20px;">
+                    <Label style="-fx-font-size: 14px; -fx-text-fill: #64748B;" text="🔍" />
+                    <TextField prefWidth="180" promptText="Search..." style="-fx-background-color: transparent; -fx-border-width: 0;" text="recherche..." />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10">
+                    <ImageView fitHeight="33" fitWidth="34">
+                        <image>
+                            <Image url="@../../../../../Desktop/4122901.png" />
+                        </image>
+                    </ImageView>
+                    <VBox alignment="CENTER_LEFT" spacing="2">
+                        <Label styleClass="user-name" text="Rokbani Marwa" />
+                        <Label styleClass="user-role" text="Admin" />
+                    </VBox>
+                    <Label styleClass="dropdown-arrow" text="▼" />
+                </HBox>
+            </HBox>
+        </HBox>
+    </top>
+    <center>
+        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="700" spacing="24" style="-fx-padding: 32px; -fx-background-color: #FAFBFC;">
+            <HBox alignment="CENTER_LEFT" spacing="16">
+                <Button fx:id="backButton" onAction="#handleBack" styleClass="back-btn" text="← Retour" />
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER" spacing="4">
+                    <Label styleClass="page-title" text="Modifier le thérapeute" />
+                    <Label styleClass="status-badge-active" text="● Actif" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+            </HBox>
+            <VBox spacing="28" styleClass="form-card" VBox.vgrow="ALWAYS">
+                <VBox alignment="CENTER" spacing="12" styleClass="photo-section">
+                    <ImageView fx:id="therapistPhoto" fitHeight="120" fitWidth="120" styleClass="profile-photo">
+                        <image>
+                            <Image url="@../../../../../Desktop/4122901.png" />
+                        </image>
+                    </ImageView>
+                    <HBox alignment="CENTER" spacing="12">
+                        <Button fx:id="changePhotoButton" onAction="#handleChangePhoto" styleClass="upload-btn" text="📷 Changer la photo" />
+                        <Button fx:id="removePhotoButton" onAction="#handleRemovePhoto" styleClass="remove-photo-btn" text="✕ Supprimer" />
+                    </HBox>
+                </VBox>
+                <GridPane hgap="20" vgap="20">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                    <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label styleClass="field-label" text="Prénom *" />
+                        <TextField fx:id="firstNameField" styleClass="input-field" text="Jean" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label styleClass="field-label" text="Nom *" />
+                        <TextField fx:id="lastNameField" styleClass="input-field" text="Dupont" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label styleClass="field-label" text="Email *" />
+                        <TextField fx:id="emailField" styleClass="input-field" text="jean.dupont@therapie.tn" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label styleClass="field-label" text="Téléphone *" />
+                        <TextField fx:id="phoneField" styleClass="input-field" text="+216 98 765 432" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Label styleClass="field-label" text="Spécialité *" />
+                        <ComboBox fx:id="specialtyCombo" prefWidth="300" styleClass="input-field" value="Psychologie Cognitive" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label styleClass="field-label" text="Date d'embauche *" />
+                        <DatePicker fx:id="hireDatePicker" prefWidth="300" styleClass="input-field" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <Label styleClass="field-label" text="Numéro de licence" />
+                        <TextField fx:id="licenseField" styleClass="input-field" text="PSY-2019-12345" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label styleClass="field-label" text="Années d'expérience" />
+                        <TextField fx:id="experienceField" styleClass="input-field" text="8 ans" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                        <Label styleClass="field-label" text="Statut" />
+                        <ComboBox fx:id="statusCombo" prefWidth="300" styleClass="input-field" value="Actif" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Label styleClass="field-label" text="Disponibilité" />
+                        <ComboBox fx:id="availabilityCombo" prefWidth="300" styleClass="input-field" value="Temps plein" />
+                    </VBox>
+                    <VBox spacing="8" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                        <Label styleClass="field-label" text="Biographie professionnelle" />
+                        <TextArea fx:id="bioArea" prefHeight="100" styleClass="textarea-field" text="Psychologue clinicien spécialisé en thérapie cognitive et comportementale avec plus de 8 ans d'expérience. Diplômé de l'Université de Tunis, formé aux techniques TCC et EMDR." wrapText="true" />
+                    </VBox>
+                </GridPane>
+                <Region VBox.vgrow="ALWAYS" />
+                <HBox alignment="CENTER" spacing="16" style="-fx-padding: 20 0 0 0;">
+                    <Button fx:id="deleteButton" onAction="#handleDelete" prefWidth="150" styleClass="delete-btn" text="🗑 Supprimer" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="cancelButton" onAction="#handleCancel" prefWidth="150" styleClass="cancel-btn" text="Annuler" />
+                    <Button fx:id="saveButton" onAction="#handleSave" prefWidth="150" styleClass="save-btn" text="✓ Sauvegarder" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

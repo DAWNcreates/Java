@@ -1,0 +1,171 @@
+
+/* ================= SIDEBAR ================== */
+/* ===== SIDEBAR ===== */
+.sidebar {
+    -fx-background-color: #304519;
+    -fx-padding: 24;
+    -fx-spacing: 20;
+    -fx-background-radius: 0 20 20 0;
+}
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c8e6c9;
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-padding: 8 12;
+    -fx-background-radius: 8;
+}
+
+.menu-btn:hover {
+    -fx-background-color: #43a047;
+    -fx-text-fill: white;
+}
+
+/* ================= TOP BAR ================== */
+.user-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.user-role {
+    -fx-font-size: 11px;
+    -fx-text-fill: #78909C;
+}
+
+/* ---------------------------------------------------------
+   GENERAL LAYOUT — DEEP, CLEAN, PREMIUM
+--------------------------------------------------------- */
+* {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Page Title */
+.page-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A3D35;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0.3, 0, 2);
+}
+
+
+
+/* ---------------------------------------------------------
+   TOP BAR — GLASS EFFECT + SHADOW
+--------------------------------------------------------- */
+HBox {
+    -fx-background-radius: 0 0 18 18;
+}
+
+.user-name {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A3D35;
+}
+
+.user-role {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6c757d;
+}
+
+.dropdown-arrow {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2d6a4f;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS — PREMIUM GREEN WITH SOFT GLOW
+--------------------------------------------------------- */
+.action-btn {
+    -fx-background-color: linear-gradient(to right, #52b788, #40916c);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 22;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0.3, 0, 2);
+}
+
+.action-btn:hover {
+    -fx-background-color: linear-gradient(to right, #74c69d, #52b788);
+    -fx-translate-y: -2;
+}
+
+.delete-btn {
+    -fx-background-color: #d00000;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 20;
+    -fx-background-radius: 10;
+}
+
+.delete-btn:hover {
+    -fx-background-color: #9b0000;
+    -fx-translate-y: -2;
+}
+
+
+/* ---------------------------------------------------------
+   TABLEVIEW — AMAZING GLASS + HIGHLIGHT + SHADOW
+--------------------------------------------------------- */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-control-inner-background: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #304519;
+    -fx-background-radius: 12 12 0 0;
+    -fx-padding: 6;
+}
+
+.table-view .column-header .label {
+        -fx-background-color: #304519;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Row styling */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-padding: 6px;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f3faf6;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #d8f3dc;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #52b788 !important;
+    -fx-text-fill: white;
+}
+
+
+/* ---------------------------------------------------------
+   SEARCH BOX — POLISHED SOFT-PILL
+--------------------------------------------------------- */
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: #2d6a4f;
+}
+
+/* ---------------------------------------------------------
+   CENTER PANEL — ELEGANT WHITE CARD
+--------------------------------------------------------- */
+.center VBox {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 18, 0.22, 0, 3);
+}

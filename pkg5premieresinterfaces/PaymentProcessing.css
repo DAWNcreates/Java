@@ -1,0 +1,117 @@
+
+/* ===========================
+   SIDEBAR
+   =========================== */
+.sidebar {
+    -fx-background-color: #304519;
+    -fx-padding: 24;
+    -fx-spacing: 20;
+    -fx-background-radius: 0 20 20 0;
+}
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c8e6c9;
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-padding: 8 12;
+    -fx-background-radius: 8;
+}
+
+.menu-btn:hover {
+    -fx-background-color: #43a047;
+    -fx-text-fill: white;
+}
+
+/* ===================================================================
+   GLOBAL — airy, clean, soft
+=================================================================== */
+* {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* MAIN CONTAINER */
+.v-box {
+    -fx-background-color: #f4f8f3;
+    -fx-spacing: 20;
+    -fx-padding: 20;
+    -fx-background-radius: 25 0 0 25;
+}
+
+/* PAGE TITLE */
+.page-title {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A3D35;
+    -fx-padding: 10 0 20 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.28, 0, 2);
+}
+
+/* ===================================================================
+   FORM LABELS
+=================================================================== */
+.form-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #2F4F4F;
+    -fx-opacity: 0.9;
+    -fx-min-width: 120px; /* Align better */
+}
+
+/* ===================================================================
+   TEXTFIELDS — premium, airy, smooth
+=================================================================== */
+.text-field, TextField {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 10 14;
+    -fx-font-size: 15px;
+    -fx-pref-width: 260;
+    -fx-border-color: #bcd9c7;
+    -fx-border-radius: 12;
+    -fx-border-width: 1.2;
+}
+
+.text-field:hover, TextField:hover {
+    -fx-border-color: #74c69d;
+}
+
+.text-field:focused, TextField:focused {
+    -fx-border-color: #40916c;
+    -fx-background-color: #ffffff;
+}
+
+/* ===================================================================
+   BUTTONS — PREMIUM GREEN
+=================================================================== */
+#processPaymentBtn {
+    -fx-background-color: linear-gradient(to right, #52b788, #40916c);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 28;
+    -fx-background-radius: 14;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0.25, 0, 2);
+}
+
+#processPaymentBtn:hover {
+    -fx-background-color: linear-gradient(to right, #74c69d, #52b788);
+    -fx-translate-y: -2;
+}
+
+/* CLEAR BUTTON */
+#clearBtn {
+    -fx-background-color: #adb5bd;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 26;
+    -fx-background-radius: 14;
+    -fx-cursor: hand;
+}
+
+#clearBtn:hover {
+    -fx-background-color: #6c757d;
+    -fx-translate-y: -2;
+}
