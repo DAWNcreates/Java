@@ -16,13 +16,13 @@
 
         <!-- HEADER: PROFILE IMAGE + INFO -->
         <HBox alignment="CENTER_LEFT" spacing="20" styleClass="h-box">
-            <ImageView fx:id="profileImage" fitHeight="100" fitWidth="100" preserveRatio="true" styleClass="image-view">
+            <ImageView fx:id="profileImage" fitHeight="118.0" fitWidth="140.0" preserveRatio="true" styleClass="image-view">
                 <image>
-                    <Image url="@profile1.png" />
+                    <Image url="@../../../../../Desktop/pngtree-woman-face-purple-icon-vector-illustration-png-image_12862667.png" />
                 </image>
             </ImageView>
 
-            <VBox prefHeight="100.0" prefWidth="290.0" spacing="5">
+            <VBox prefHeight="100.0" prefWidth="382.0" spacing="5">
                 <Label id="fullNameLabel" fx:id="fullNameLabel" text="Dr. Amira Haddad" />
                 <Label id="specialtyLabel" fx:id="specialtyLabel" text="Psycothérapeute en depression et anxiété" />
                 <Label id="emailLabel" fx:id="emailLabel" text="Email: amira.haddad@example.com" />
@@ -32,8 +32,8 @@
 
         <!-- BIO SECTION -->
         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="450.0" spacing="10">
-            <Label style="-fx-font-weight:bold; -fx-text-fill:#2f7d32;" text="Biographie:" />
-            <TextArea id="bioTextArea" fx:id="bioTextArea" editable="false" prefHeight="162.0" prefWidth="450.0" text="Dr. Amira Haddad est une thérapeute spécialiste en anxiéte &#10;" wrapText="true" />
+            <Label style="-fx-font-weight:bold; -fx-text-fill:#9D71E8;" text="Biographie:" />
+            <TextArea id="bioTextArea" fx:id="bioTextArea" editable="false" prefHeight="99.0" prefWidth="450.0" text="Dr. Amira Haddad est une thérapeute spécialiste en anxiéte &#10;" wrapText="true" />
         </VBox>
 
         <!-- BUTTONS -->

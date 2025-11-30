@@ -1,15 +1,15 @@
 /* MAIN BACKGROUND */
 .anchor-pane {
-    -fx-background-color: linear-gradient(to bottom right, #e6fff2, #d0ffd8);
+    -fx-background-color: linear-gradient(to bottom right, #F2F7FF, #C9DCFF);
 }
 
 /* VBox container */
 .v-box {
     -fx-padding: 25;
     -fx-spacing: 25;
-    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-color: rgba(255, 255, 255, 0.85); /* white allowed */
     -fx-background-radius: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 5);
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.2), 15, 0, 0, 5); /* #9D71E8 @ 20% */
 }
 
 /* HEADER HBOX */
@@ -20,49 +20,49 @@
 
 /* PROFILE IMAGE */
 .image-view {
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0, 0, 5);
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.3), 15, 0, 0, 5); /* #9D71E8 @ 30% */
     -fx-background-radius: 50;
     -fx-border-radius: 50;
-    -fx-border-color: #43a047;
+    -fx-border-color: #BE99FF; /* from palette */
     -fx-border-width: 2;
 }
 
 /* THERAPIST NAME */
 .label {
-    -fx-font-family: "Segoe UI", sans-serif;
-    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 1);
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-effect: dropshadow(one-pass-box, rgba(157, 113, 232, 0.2), 2, 0, 0, 1);
 }
 
 /* Full Name */
 #fullNameLabel {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: linear-gradient(to right, #1b5e20, #43a047);
+    -fx-text-fill: #9D71E8; /* deep purple accent — only non-white non-gradient fill */
 }
 
 /* Specialty */
 #specialtyLabel {
     -fx-font-size: 16px;
-    -fx-text-fill: #2e7d32;
+    -fx-text-fill: #B2C9FF; /* soft periwinkle-blue */
     -fx-font-style: italic;
 }
 
 /* Email & Phone Labels */
 #emailLabel, #phoneLabel {
     -fx-font-size: 14px;
-    -fx-text-fill: #555555;
+    -fx-text-fill: #C8B6FF; /* matches sidebar — soft but readable */
 }
 
 /* BIO TEXTAREA */
 #bioTextArea {
-    -fx-background-color: rgba(255,255,255,0.9);
-    -fx-border-color: #43a047;
+    -fx-background-color: rgba(255, 255, 255, 0.9); /* white allowed */
+    -fx-border-color: #C8B6FF;
     -fx-border-radius: 12;
     -fx-background-radius: 12;
     -fx-font-size: 14px;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #9D71E8; /* deep purple for readability */
     -fx-padding: 12;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 3);
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.1), 5, 0, 0, 3);
 }
 
 /* BUTTONS */
@@ -72,22 +72,24 @@
     -fx-background-radius: 12;
     -fx-cursor: hand;
     -fx-padding: 10 20 10 20;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5, 0, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.15), 5, 0, 0, 2);
     -fx-text-fill: white;
 }
 
-/* EDIT BUTTON */
+/* EDIT BUTTON — using luminous purple gradient */
 .button#editBtn {
-    -fx-background-color: linear-gradient(to right, #66bb6a, #43a047);
+    -fx-background-color: linear-gradient(to right, #BE99FF, #9D71E8);
 }
 .button#editBtn:hover {
-    -fx-background-color: linear-gradient(to right, #43a047, #1b5e20);
+    -fx-background-color: linear-gradient(to right, #9D71E8, #C8B6FF);
 }
 
-/* CLOSE BUTTON */
+/* CLOSE BUTTON — soft but clear, using cool periwinkle (not red!) */
 .button#closeBtn {
-    -fx-background-color: linear-gradient(to right, #ef5350, #c62828);
+    -fx-background-color: #9D71E8 ;
+    -fx-text-fill: linear-gradient(to right, #B2C9FF, #C9DCFF);
 }
 .button#closeBtn:hover {
-    -fx-background-color: linear-gradient(to right, #c62828, #8e0000);
+    -fx-background-color: linear-gradient(to right, #C9DCFF, #F2F7FF);
+    -fx-text-fill: #BE99FF;
 }

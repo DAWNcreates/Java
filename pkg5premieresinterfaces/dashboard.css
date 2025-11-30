@@ -3,46 +3,72 @@
     -fx-font-family: 'Segoe UI', system;
 }
 
-/* ===== SIDEBAR ===== */
-.sidebar {
-    -fx-background-color: #304519;
-    -fx-padding: 24;
-    -fx-spacing: 20;
-    -fx-background-radius: 0 20 20 0;
+/* ===== SIDEBAR ===== */.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF); /* soft lavender-to-purple gradient */
+    -fx-padding: 24px 18px;
+    -fx-spacing: 16px;
+    -fx-background-radius: 0 28px 28px 0;
+    -fx-effect: dropshadow(gaussian, rgba(167, 139, 250, 0.2), 8, 0, 0, 2);
 }
+
+/* Enhanced logo circle with subtle glow and green touch */
 .logo-circle {
-    -fx-pref-width: 32px;
-    -fx-pref-height: 32px;
-    -fx-background-color: white;
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-background-color: #E0F2FE; /* very soft sky blue (airy) */
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 2px;
     -fx-background-radius: 50%;
     -fx-alignment: center;
-    -fx-text-fill: #0A7E56;
+    -fx-text-fill: #0D9488; /* richer teal-green */
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(167, 243, 208, 0.5), 6, 0.3, 0, 0);
+    -fx-translate-y: 0;
+    -fx-transition: -fx-translate-y 0.3s ease-out;
 }
-.menu-title {
-    -fx-text-fill: #A7F3D0;
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
+.logo-circle:hover {
+    -fx-translate-y: -4px; /* gentle "bouncy" lift */
 }
 .menu-btn {
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff; /* very soft icy blue-white (airy & clean) */
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
     -fx-background-color: transparent;
-    -fx-padding: 12px 16px;
+    -fx-padding: 16px 16px;
     -fx-alignment: center-left;
-    -fx-background-radius: 8px;
+    -fx-background-radius: 0; /* no box */
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-opacity: 0.92;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.3), 4, 0.3, 0, 2); /* deep purple shadow */
+    -fx-translate-x: 0;
+    -fx-transition: -fx-text-fill 0.2s, -fx-effect 0.2s, -fx-translate-x 0.2s;
 }
+
 .menu-btn:hover {
-    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.35), 6, 0.4, 0, 3);
+    -fx-translate-x: 4px; /* subtle "flowy" glide to the right */
 }
-.menu-btn:pressed {
-    -fx-background-color: rgba(0,0,0,0.2);
+
+/* Highlighted (active) menu item — more prominent shadow + slight boldness */
+.menu-btn:selected,
+.menu-btn:armed {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 600;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 8, 0.6, 0, 4);
+    -fx-translate-x: 6px;
 }
+/* Footer: delicate and light */
 .sidebar-footer {
-    -fx-text-fill: #D1FAE5;
-    -fx-font-size: 11px;
+    -fx-text-fill: #DCFCE7; /* pale green-white */
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
     -fx-alignment: center;
+    -fx-opacity: 0.85;
+    -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
 }
 
 /* ===== TOP BAR ===== */
@@ -100,7 +126,7 @@
     -fx-text-fill: #1E293B;
 }
 .task-card {
-    -fx-background-color: white;
+    -fx-background-color: #F2F7FF;
     -fx-padding: 20px;
     -fx-spacing: 12px;
     -fx-background-radius: 16px;
@@ -108,6 +134,7 @@
     -fx-cursor: hand;
 }
 .task-card:hover {
+    background-color: #F2F7FF;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 4);
     -fx-translate-y: -2;
 }

@@ -1,31 +1,99 @@
 
+/* ===== SIDEBAR ===== */.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF); /* soft lavender-to-purple gradient */
+    -fx-padding: 24px 18px;
+    -fx-spacing: 16px;
+    -fx-background-radius: 0 28px 28px 0;
+    -fx-effect: dropshadow(gaussian, rgba(167, 139, 250, 0.2), 8, 0, 0, 2);
+}
+
+/* Enhanced logo circle with subtle glow and green touch */
+.logo-circle {
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-background-color: #E0F2FE; /* very soft sky blue (airy) */
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 2px;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+    -fx-text-fill: #0D9488; /* richer teal-green */
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(167, 243, 208, 0.5), 6, 0.3, 0, 0);
+    -fx-translate-y: 0;
+    -fx-transition: -fx-translate-y 0.3s ease-out;
+}
+.logo-circle:hover {
+    -fx-translate-y: -4px; /* gentle "bouncy" lift */
+}
+.menu-btn {
+    -fx-text-fill: #ffffff; /* very soft icy blue-white (airy & clean) */
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
+    -fx-background-color: transparent;
+    -fx-padding: 16px 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0; /* no box */
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-opacity: 0.92;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.3), 4, 0.3, 0, 2); /* deep purple shadow */
+    -fx-translate-x: 0;
+    -fx-transition: -fx-text-fill 0.2s, -fx-effect 0.2s, -fx-translate-x 0.2s;
+}
+
+.menu-btn:hover {
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.35), 6, 0.4, 0, 3);
+    -fx-translate-x: 4px; /* subtle "flowy" glide to the right */
+}
+
+/* Highlighted (active) menu item — more prominent shadow + slight boldness */
+.menu-btn:selected,
+.menu-btn:armed {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 600;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 8, 0.6, 0, 4);
+    -fx-translate-x: 6px;
+}
+/* Footer: delicate and light */
+.sidebar-footer {
+    -fx-text-fill: #DCFCE7; /* pale green-white */
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
+    -fx-alignment: center;
+    -fx-opacity: 0.85;
+    -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
+}
 /* Base background – light, airy, serene */
 .root {
-    -fx-background-color: #f0f8f2; /* Pale mint green – fresh and calm */
+    -fx-background-color: #F2F7FF; /* clean off-white from your palette */
 }
 
 /* === Typography & Headers === */
 .header {
     -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
     -fx-font-size: 32px;
-    -fx-font-weight: 600;
-    -fx-text-fill: #1b5e20; /* Rich dark green */
+    -fx-font-weight: 700;
+    -fx-text-fill: #9D71E8; /* deep purple — your anchor accent */
     -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.12), 2, 0, 0, 1); /* barely there */
 }
 
 .section-title {
     -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
     -fx-font-size: 16px;
     -fx-font-weight: 600;
-    -fx-text-fill: #2e7d32; /* Medium-dark green */
+    -fx-text-fill: #B2C9FF; /* soft periwinkle-blue */
     -fx-padding: 12 0 6 0;
 }
 
 /* === Separators === */
 .separator .line {
-    -fx-border-color: #c8e6c9;
+    -fx-border-color: #E7C6FF; /* soft lavender */
     -fx-border-width: 1px;
-    -fx-opacity: 0.6;
+    -fx-opacity: 0.7;
 }
 
 /* === Buttons – Flowy, Rounded, Soft === */
@@ -36,67 +104,46 @@
     -fx-font-weight: 600;
     -fx-text-fill: white;
     -fx-padding: 12 24;
-    -fx-background-radius: 28px;        /* Fully rounded, pill-like */
+    -fx-background-radius: 28px;
     -fx-border-radius: 28px;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(27, 94, 32, 0.2), 6, 0, 0, 2);
     -fx-background-insets: 0;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.15), 4, 0, 0, 1); /* light lift */
 }
 
 /* Regular option buttons */
 .button {
-    -fx-background-color: #81c784; /* Soft green */
+    -fx-background-color: #BE99FF; /* luminous mid-purple */
 }
 
 .button:hover {
-    -fx-background-color: #66bb6a;
-    -fx-effect: dropshadow(gaussian, rgba(27, 94, 32, 0.3), 8, 0, 0, 3);
+    -fx-background-color: #9D71E8;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.2), 5, 0, 0, 2);
 }
 
 .button:pressed {
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1);
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.1), 3, 0, 0, 1);
 }
 
-/* Save button – slightly more prominent */
+/* Save button – deeper, more intentional */
 .save-button {
-    -fx-background-color: #00796b; /* Deep teal-green (elegant & distinctive) */
+    -fx-background-color: #B2C9FF;
     -fx-font-weight: 700;
     -fx-margin-top: 16;
 }
 
 .save-button:hover {
-    -fx-background-color: #00695c;
-    -fx-effect: dropshadow(gaussian, rgba(0, 121, 107, 0.4), 8, 0, 0, 3);
+    -fx-background-color: #C8B6FF;
+    -fx-text-fill: #9D71E8;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.22), 5, 0, 0, 2);
 }
 
 .save-button:pressed {
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0, 0, 1);
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.12), 3, 0, 0, 1);
 }
-
 /* Ensure children stretch nicely */
 VBox > * {
     -fx-max-width: Infinity;
-}
-.sidebar {
-    -fx-background-color: #304519;
-    -fx-padding: 24;
-    -fx-spacing: 20;
-    -fx-background-radius: 0 20 20 0;
-}
-.logo-circle {
-    -fx-pref-width: 32px;
-    -fx-pref-height: 32px;
-    -fx-background-color: white;
-    -fx-background-radius: 50%;
-    -fx-alignment: center;
-    -fx-text-fill: #0A7E56;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-}
-.menu-title {
-    -fx-text-fill: #A7F3D0;
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
 }
 .menu-btn {
     -fx-text-fill: white;
@@ -105,15 +152,4 @@ VBox > * {
     -fx-padding: 12px 16px;
     -fx-alignment: center-left;
     -fx-background-radius: 8px;
-}
-.menu-btn:hover {
-    -fx-background-color: rgba(255,255,255,0.15);
-}
-.menu-btn:pressed {
-    -fx-background-color: rgba(0,0,0,0.2);
-}
-.sidebar-footer {
-    -fx-text-fill: #D1FAE5;
-    -fx-font-size: 11px;
-    -fx-alignment: center;
 }

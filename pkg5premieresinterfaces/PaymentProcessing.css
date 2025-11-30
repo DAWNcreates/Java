@@ -1,51 +1,96 @@
 
-/* ===========================
-   SIDEBAR
-   =========================== */
-.sidebar {
-    -fx-background-color: #304519;
-    -fx-padding: 24;
-    -fx-spacing: 20;
-    -fx-background-radius: 0 20 20 0;
+/* ===== SIDEBAR ===== */.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF); /* soft lavender-to-purple gradient */
+    -fx-padding: 24px 18px;
+    -fx-spacing: 16px;
+    -fx-background-radius: 0 28px 28px 0;
+    -fx-effect: dropshadow(gaussian, rgba(167, 139, 250, 0.2), 8, 0, 0, 2);
+}
+
+/* Enhanced logo circle with subtle glow and green touch */
+.logo-circle {
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-background-color: #E0F2FE; /* very soft sky blue (airy) */
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 2px;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+    -fx-text-fill: #0D9488; /* richer teal-green */
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(167, 243, 208, 0.5), 6, 0.3, 0, 0);
+    -fx-translate-y: 0;
+    -fx-transition: -fx-translate-y 0.3s ease-out;
+}
+.logo-circle:hover {
+    -fx-translate-y: -4px; /* gentle "bouncy" lift */
 }
 .menu-btn {
+    -fx-text-fill: #ffffff; /* very soft icy blue-white (airy & clean) */
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
     -fx-background-color: transparent;
-    -fx-text-fill: #c8e6c9;
-    -fx-font-size: 14px;
+    -fx-padding: 16px 16px;
     -fx-alignment: center-left;
-    -fx-padding: 8 12;
-    -fx-background-radius: 8;
+    -fx-background-radius: 0; /* no box */
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-opacity: 0.92;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.3), 4, 0.3, 0, 2); /* deep purple shadow */
+    -fx-translate-x: 0;
+    -fx-transition: -fx-text-fill 0.2s, -fx-effect 0.2s, -fx-translate-x 0.2s;
 }
 
 .menu-btn:hover {
-    -fx-background-color: #43a047;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.35), 6, 0.4, 0, 3);
+    -fx-translate-x: 4px; /* subtle "flowy" glide to the right */
 }
 
+/* Highlighted (active) menu item — more prominent shadow + slight boldness */
+.menu-btn:selected,
+.menu-btn:armed {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 600;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 8, 0.6, 0, 4);
+    -fx-translate-x: 6px;
+}
+/* Footer: delicate and light */
+.sidebar-footer {
+    -fx-text-fill: #DCFCE7; /* pale green-white */
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
+    -fx-alignment: center;
+    -fx-opacity: 0.85;
+    -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
+}
 /* ===================================================================
    GLOBAL — airy, clean, soft
 =================================================================== */
 * {
-    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-family: "Segoe UI", "System", sans-serif;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
 /* MAIN CONTAINER */
 .v-box {
-    -fx-background-color: #f4f8f3;
-    -fx-spacing: 20;
-    -fx-padding: 20;
-    -fx-background-radius: 25 0 0 25;
+    -fx-background-color: #F2F7FF; /* clean off-white */
+    -fx-spacing: 24;
+    -fx-padding: 28;
+    -fx-background-radius: 28 0 0 28;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.08), 10, 0, 0, 2); /* barely there */
 }
 
 /* PAGE TITLE */
 .page-title {
     -fx-font-size: 34px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #1A3D35;
-    -fx-padding: 10 0 20 0;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.28, 0, 2);
+    -fx-font-weight: 800;
+    -fx-text-fill: #9D71E8;
+    -fx-padding: 10 0 24 0;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.15), 4, 0, 0, 1); /* soft lift */
 }
 
 /* ===================================================================
@@ -53,65 +98,68 @@
 =================================================================== */
 .form-label {
     -fx-font-size: 16px;
-    -fx-text-fill: #2F4F4F;
-    -fx-opacity: 0.9;
-    -fx-min-width: 120px; /* Align better */
+    -fx-text-fill: #B2C9FF; /* soft periwinkle */
+    -fx-opacity: 0.95;
+    -fx-min-width: 130px;
 }
 
 /* ===================================================================
-   TEXTFIELDS — premium, airy, smooth
+   TEXTFIELDS — luminous & clean
 =================================================================== */
 .text-field, TextField {
-    -fx-background-color: white;
-    -fx-background-radius: 12;
-    -fx-padding: 10 14;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 14px;
+    -fx-padding: 12 16;
     -fx-font-size: 15px;
-    -fx-pref-width: 260;
-    -fx-border-color: #bcd9c7;
-    -fx-border-radius: 12;
-    -fx-border-width: 1.2;
+    -fx-pref-width: 280px;
+    -fx-border-color: #E7C6FF; /* soft lavender outline */
+    -fx-border-radius: 14px;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.05), 2, 0, 0, 1); /* airy lift */
 }
 
 .text-field:hover, TextField:hover {
-    -fx-border-color: #74c69d;
+    -fx-border-color: #C8B6FF;
 }
 
 .text-field:focused, TextField:focused {
-    -fx-border-color: #40916c;
-    -fx-background-color: #ffffff;
+    -fx-border-color: #9D71E8;
+    -fx-border-width: 2px;
+    -fx-background-color: #FFFFFF;
 }
 
 /* ===================================================================
-   BUTTONS — PREMIUM GREEN
+   BUTTONS — LUMINOUS PURPLES
 =================================================================== */
 #processPaymentBtn {
-    -fx-background-color: linear-gradient(to right, #52b788, #40916c);
+    -fx-background-color: linear-gradient(to right, #BE99FF, #9D71E8);
     -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-padding: 12 28;
-    -fx-background-radius: 14;
+    -fx-padding: 13 30;
+    -fx-background-radius: 16px;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0.25, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.18), 5, 0, 0, 2);
 }
 
 #processPaymentBtn:hover {
-    -fx-background-color: linear-gradient(to right, #74c69d, #52b788);
-    -fx-translate-y: -2;
+    -fx-background-color: linear-gradient(to right, #9D71E8, #C8B6FF);
+    -fx-translate-y: -2px;
 }
 
-/* CLEAR BUTTON */
+/* CLEAR BUTTON — soft neutral */
 #clearBtn {
-    -fx-background-color: #adb5bd;
-    -fx-text-fill: white;
+    -fx-background-color: #C9DCFF; /* cool sky from your palette */
+    -fx-text-fill: #9D71E8;
     -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-padding: 12 26;
-    -fx-background-radius: 14;
+    -fx-padding: 13 28;
+    -fx-background-radius: 16px;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(178, 201, 255, 0.15), 4, 0, 0, 1); /* #B2C9FF shadow */
 }
 
 #clearBtn:hover {
-    -fx-background-color: #6c757d;
-    -fx-translate-y: -2;
+    -fx-background-color: #B2C9FF;
+    -fx-translate-y: -2px;
 }
