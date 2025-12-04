@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" >
+    
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: linear-gradient(to right, #9D71E8, #BE99FF); -fx-padding: 10 20;">
+            <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Modifier Patient" />
+            
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <Button  style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 6 15;" text="← Retour" />
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="8.0" style="-fx-background-color: #F2F7FF;">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="12" />
+            </padding>
+                
+                <!-- Titre avec ID patient et Statut -->
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <VBox spacing="2">
+                        <Label prefHeight="26.0" prefWidth="427.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Modifier les Informations" />
+                        <Label fx:id="patientIdLabel" style="-fx-font-size: 11px; -fx-text-fill: #7E6E9E;" text="Patient ID: #PAT-001" />
+                    </VBox>
+                    
+                    <Region HBox.hgrow="ALWAYS" />
+                    
+                    <!-- Statut du patient -->
+                    <VBox alignment="CENTER_RIGHT" spacing="3">
+                        <Label style="-fx-font-size: 10px; -fx-text-fill: #7E6E9E;" text="Statut" />
+                        <ToggleButton fx:id="statutToggle" prefHeight="25" prefWidth="80" selected="true" style="-fx-background-color: #C8B6FF; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand; -fx-font-size: 11px;" text="Actif" />
+                    </VBox>
+                </HBox>
+                
+                <!-- Formulaire principal en 2 colonnes -->
+                <GridPane hgap="15" vgap="6" VBox.vgrow="ALWAYS">
+                    
+                    <!-- COLONNE 1 -->
+                    
+                    <!-- Nom -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Nom Complet *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="nomField" prefHeight="30.0" prefWidth="220.0" promptText="Ex: Jean Dupont" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    
+                    <!-- Âge -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Âge *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="ageField" prefHeight="30.0" promptText="35" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    
+                    <!-- Genre -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Genre *" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <ComboBox fx:id="genreCombo" maxWidth="Infinity" prefHeight="30.0" promptText="Sélectionner" style="-fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                        <items>
+                            <javafx.collections.FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Homme" />
+                                <String fx:value="Femme" />
+                                <String fx:value="Autre" />
+                            </javafx.collections.FXCollections>
+                        </items>
+                    </ComboBox>
+                    
+                    <!-- Email -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Email *" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <TextField fx:id="emailField" prefHeight="30.0" promptText="exemple@email.com" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                    
+                    <!-- Téléphone -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Téléphone *" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                    <TextField fx:id="telephoneField" prefHeight="30.0" promptText="+216 XX XXX XXX" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                    
+                    <!-- COLONNE 2 -->
+                    
+                    <!-- Adresse -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Adresse" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextArea fx:id="adresseArea" prefHeight="53.0" prefWidth="446.0" promptText="Adresse complète" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+                    
+                    <!-- Contact d'urgence - Nom -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #BE99FF;" text="Contact Urgence - Nom *" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <TextField fx:id="contactUrgenceNomField" prefHeight="30.0" promptText="Nom du contact" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    
+                    <!-- Contact d'urgence - Téléphone -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #BE99FF;" text="Contact Urgence - Tél *" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <TextField fx:id="contactUrgenceTelField" prefHeight="30.0" promptText="Téléphone urgence" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    
+                    <!-- Contact d'urgence - Relation -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #BE99FF;" text="Contact Urgence - Relation" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    <TextField fx:id="contactUrgenceRelationField" prefHeight="30.0" promptText="Ex: Conjoint, Parent" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                    
+                    <!-- Date d'inscription (lecture seule) -->
+                    <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #7E6E9E;" text="Date d'Inscription" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                    <HBox alignment="CENTER_LEFT" spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                        <Label fx:id="dateInscriptionLabel" style="-fx-font-size: 11px; -fx-text-fill: #5A4A8A; -fx-padding: 6 10; -fx-background-color: #F2F7FF; -fx-background-radius: 6;" text="12/05/2024" />
+                        <Label style="-fx-font-size: 10px; -fx-text-fill: #999;" text="(Lecture seule)" />
+                    </HBox>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+                </GridPane>
+                
+                <!-- Message d'erreur -->
+                <Label fx:id="errorLabel" style="-fx-font-size: 11px; -fx-padding: 6; -fx-background-color: #FFD6FF; -fx-background-radius: 6;" textFill="red" visible="false" wrapText="true" />
+                
+                <!-- Message de succès -->
+                <Label fx:id="successLabel" style="-fx-font-size: 11px; -fx-padding: 6; -fx-background-color: #E7C6FF; -fx-background-radius: 6;" textFill="green" visible="false" wrapText="true" />
+                
+                <!-- Boutons d'action -->
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Button  prefHeight="32.0" prefWidth="190" style="-fx-background-color: #9D71E8; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px; -fx-cursor: hand;" text="Enregistrer les Modifications" />
+                    
+                    <Button  prefHeight="32.0" prefWidth="120" style="-fx-background-color: #C8B6FF; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px; -fx-cursor: hand;" text="Réinitialiser" />
+                    
+                    <Button  prefHeight="32.0" prefWidth="120" style="-fx-background-color: #BE99FF; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px; -fx-cursor: hand;" text="Annuler" />
+                </HBox>
+                
+                <Label style="-fx-font-size: 10px; -fx-text-fill: #7E6E9E; -fx-font-style: italic;" text="* Champs obligatoires" />
+            </VBox>
+    </center>
+</BorderPane>

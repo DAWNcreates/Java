@@ -1,0 +1,208 @@
+/* ================================
+   ROOT
+   ================================ */
+.root {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-background-color: #F2F7FF; /* clean off-white from your palette */
+    -fx-padding: 0px;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 16px;
+    -fx-padding: 12 22;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.15), 5, 0, 0, 2);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #BE99FF, #C8B6FF);
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-border-color: #C8B6FF;
+    -fx-border-width: 1.8px;
+    -fx-border-radius: 16px;
+    -fx-text-fill: #9D71E8;
+    -fx-padding: 12 22;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: rgba(157, 113, 232, 0.08); /* subtle purple tint */
+}
+
+.btn-accent {
+    -fx-background-color: linear-gradient(to bottom, #BE99FF, #9D71E8);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 16px;
+    -fx-padding: 12 22;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.15), 5, 0, 0, 2);
+}
+
+.btn-accent:hover {
+    -fx-background-color: linear-gradient(to bottom, #C8B6FF, #E7C6FF);
+}
+
+/* ================================
+   LABELS / TEXT
+   ================================ */
+
+.money-label {
+    -fx-font-size: 12pt;
+    -fx-text-fill: #B2C9FF; /* soft periwinkle */
+    -fx-font-weight: 500;
+    -fx-padding: 2 10;
+}
+
+.total-text {
+    -fx-font-size: 14pt;
+    -fx-text-fill: #9D71E8;
+    -fx-font-weight: 600;
+}
+
+.total-amount {
+    -fx-font-size: 20pt;
+    -fx-text-fill: #9D71E8;
+    -fx-font-weight: 800;
+    -fx-padding: 0 12;
+}
+
+/* ================================
+   INPUTS (FIELDS)
+   ================================ */
+.text-field, .text-area, .date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #E7C6FF; /* soft lavender */
+    -fx-border-radius: 14px;
+    -fx-background-radius: 14px;
+    -fx-padding: 10 14;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.04), 2, 0, 0, 1); /* airy lift */
+}
+
+.text-field:focused, .text-area:focused, .date-picker:focused {
+    -fx-border-color: #9D71E8;
+    -fx-border-width: 2px;
+}
+
+/* ================================
+   TABLE VIEW
+   ================================ */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-border-radius: 16px;
+    -fx-border-color: #E7C6FF;
+    -fx-border-width: 1.4px;
+    -fx-padding: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.06), 4, 0, 0, 1);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #F2F7FF, #E7C6FF);
+    -fx-background-radius: 16px 16px 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #9D71E8;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #F2F7FF; /* ultra-soft highlight */
+}
+
+/* ================================
+   PANELS / CONTAINERS
+   ================================ */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 18px;
+    -fx-padding: 24px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.08), 8, 0, 0, 2);
+}
+
+.green-panel {
+    -fx-background-color: linear-gradient(to bottom, #F2F7FF, #E7C6FF);
+    -fx-background-radius: 18px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.05), 5, 0, 0, 1);
+}
+
+
+/* ===== SIDEBAR ===== */.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF); /* soft lavender-to-purple gradient */
+    -fx-padding: 24px 18px;
+    -fx-spacing: 16px;
+    -fx-background-radius: 0 28px 28px 0;
+    -fx-effect: dropshadow(gaussian, rgba(167, 139, 250, 0.2), 8, 0, 0, 2);
+}
+
+/* Enhanced logo circle with subtle glow and green touch */
+.logo-circle {
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-background-color: #E0F2FE; /* very soft sky blue (airy) */
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 2px;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+    -fx-text-fill: #0D9488; /* richer teal-green */
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(167, 243, 208, 0.5), 6, 0.3, 0, 0);
+    -fx-translate-y: 0;
+    -fx-transition: -fx-translate-y 0.3s ease-out;
+}
+.logo-circle:hover {
+    -fx-translate-y: -4px; /* gentle "bouncy" lift */
+}
+.menu-btn {
+    -fx-text-fill: #ffffff; /* very soft icy blue-white (airy & clean) */
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
+    -fx-background-color: transparent;
+    -fx-padding: 16px 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0; /* no box */
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-opacity: 0.92;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.3), 4, 0.3, 0, 2); /* deep purple shadow */
+    -fx-translate-x: 0;
+    -fx-transition: -fx-text-fill 0.2s, -fx-effect 0.2s, -fx-translate-x 0.2s;
+}
+
+.menu-btn:hover {
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.35), 6, 0.4, 0, 3);
+    -fx-translate-x: 4px; /* subtle "flowy" glide to the right */
+}
+
+/* Highlighted (active) menu item — more prominent shadow + slight boldness */
+.menu-btn:selected,
+.menu-btn:armed {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 600;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 8, 0.6, 0, 4);
+    -fx-translate-x: 6px;
+}
+/* Footer: delicate and light */
+.sidebar-footer {
+    -fx-text-fill: #DCFCE7; /* pale green-white */
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
+    -fx-alignment: center;
+    -fx-opacity: 0.85;
+    -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
+}

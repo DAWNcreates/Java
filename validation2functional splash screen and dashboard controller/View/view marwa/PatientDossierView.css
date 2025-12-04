@@ -1,0 +1,269 @@
+/* ===== SIDEBAR ===== */.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF); /* soft lavender-to-purple gradient */
+    -fx-padding: 24px 18px;
+    -fx-spacing: 16px;
+    -fx-background-radius: 0 28px 28px 0;
+    -fx-effect: dropshadow(gaussian, rgba(167, 139, 250, 0.2), 8, 0, 0, 2);
+}
+
+/* Enhanced logo circle with subtle glow and green touch */
+.logo-circle {
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-background-color: #E0F2FE; /* very soft sky blue (airy) */
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 2px;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+    -fx-text-fill: #0D9488; /* richer teal-green */
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(167, 243, 208, 0.5), 6, 0.3, 0, 0);
+    -fx-translate-y: 0;
+    -fx-transition: -fx-translate-y 0.3s ease-out;
+}
+.logo-circle:hover {
+    -fx-translate-y: -4px; /* gentle "bouncy" lift */
+}
+.menu-btn {
+    -fx-text-fill: #ffffff; /* very soft icy blue-white (airy & clean) */
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
+    -fx-background-color: transparent;
+    -fx-padding: 16px 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0; /* no box */
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-opacity: 0.92;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.3), 4, 0.3, 0, 2); /* deep purple shadow */
+    -fx-translate-x: 0;
+    -fx-transition: -fx-text-fill 0.2s, -fx-effect 0.2s, -fx-translate-x 0.2s;
+}
+
+.menu-btn:hover {
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.35), 6, 0.4, 0, 3);
+    -fx-translate-x: 4px; /* subtle "flowy" glide to the right */
+}
+
+/* Highlighted (active) menu item — more prominent shadow + slight boldness */
+.menu-btn:selected,
+.menu-btn:armed {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 600;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 8, 0.6, 0, 4);
+    -fx-translate-x: 6px;
+}
+/* Footer: delicate and light */
+.sidebar-footer {
+    -fx-text-fill: #DCFCE7; /* pale green-white */
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
+    -fx-alignment: center;
+    -fx-opacity: 0.85;
+    -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
+}
+
+/* ==================== SIDEBAR SUR TOUTE LA HAUTEUR ==================== */
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF);
+    -fx-background-radius: 0 28px 28px 0;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.2), 8, 0, 0, 2);
+    -fx-min-height: 100%;
+}
+
+.menu-btn {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
+    -fx-background-color: transparent;
+    -fx-padding: 16px 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-opacity: 0.92;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.3), 4, 0.3, 0, 2);
+    -fx-translate-x: 0;
+    -fx-transition: -fx-text-fill 0.2s, -fx-effect 0.2s, -fx-translate-x 0.2s;
+}
+.menu-btn:hover {
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(192, 180, 255, 0.35), 6, 0.4, 0, 3);
+    -fx-translate-x: 4px;
+}
+.menu-btn:selected,
+.menu-btn:armed {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 600;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(192, 180, 255, 0.5), 8, 0.6, 0, 4);
+    -fx-translate-x: 6px;
+}
+.logout {
+    -fx-text-fill: #FFD6FF !important;
+    -fx-font-weight: 600;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    -fx-background-color: #F2F7FF;
+    -fx-padding: 12px 30px;
+    -fx-border-bottom: 1px solid #E0E0E0;
+}
+.header-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5A4A8A;
+    -fx-font-family: 'Segoe UI', 'Inter', sans-serif;
+}
+.back-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7E6E9E;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 6 16;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border: 1px solid #C9DCFF;
+    -fx-cursor: hand;
+}
+.back-btn:hover {
+    -fx-background-color: #E7C6FF;
+    -fx-text-fill: white;
+}
+
+/* ==================== TOGGLES ==================== */
+.toggle-btn {
+    -fx-pref-width: 100;
+    -fx-pref-height: 36;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-border-color: #C9DCFF;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+    -fx-text-fill: #5A4A8A;
+}
+.toggle-btn:selected {
+    -fx-background-color: #C8B6FF;
+    -fx-border-color: #9D71E8;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.1), 2, 0, 0, 1);
+}
+
+/* ==================== LABELS ==================== */
+.label-required {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9D71E8;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+.label-optional {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7E6E9E;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* ==================== INPUTS ==================== */
+.input-field {
+    -fx-background-color: white;
+    -fx-border-color: #C9DCFF;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 10 12;
+    -fx-prompt-text-fill: #B2C9FF;
+}
+.input-field:focused {
+    -fx-border-color: #9D71E8;
+    -fx-border-width: 2px;
+}
+.input-field .combo-box-popup {
+    -fx-background-color: white;
+}
+.input-field:textarea {
+    -fx-min-height: 70px;
+}
+
+/* ==================== RADIO ==================== */
+.radio-btn {
+    -fx-text-fill: #5A4A8A;
+    -fx-font-size: 14px;
+    -fx-padding: 0 8;
+}
+.radio-btn:selected .radio {
+    -fx-background-color: #9D71E8;
+    -fx-border-color: #9D71E8;
+}
+.radio-btn .radio {
+    -fx-background-color: white;
+    -fx-border-color: #C9DCFF;
+    -fx-border-width: 1.5px;
+}
+
+/* ==================== MESSAGES ==================== */
+.message {
+    -fx-font-size: 13px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 10 14;
+    -fx-background-radius: 8px;
+    -fx-wrap-text: true;
+}
+.error {
+    -fx-background-color: #FFD6FF;
+    -fx-text-fill: #9D71E8;
+}
+.success {
+    -fx-background-color: #E7C6FF;
+    -fx-text-fill: #7E6E9E;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-primary {
+    -fx-background-color: #9D71E8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-padding: 10 28;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.2), 4, 0, 0, 1);
+}
+.btn-primary:hover {
+    -fx-background-color: #8A5FD5;
+}
+
+.btn-secondary {
+    -fx-background-color: #C8B6FF;
+    -fx-text-fill: #5A4A8A;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-padding: 10 28;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover {
+    -fx-background-color: #B2A2FF;
+}
+
+.btn-cancel {
+    -fx-background-color: #FFD6FF;
+    -fx-text-fill: #9D71E8;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-padding: 10 28;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+.btn-cancel:hover {
+    -fx-background-color: #FFC0E6;
+}
