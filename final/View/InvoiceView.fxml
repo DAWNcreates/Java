@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="606.0" prefWidth="802.0" spacing="18" styleClass="root-pane" stylesheets="@invoicestyle.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <AnchorPane prefHeight="606.0" prefWidth="1200.0">
+      <children>
+      
+         
+         <!-- MAIN CONTENT -->
+      <HBox alignment="TOP_CENTER" prefHeight="606.0" prefWidth="802.0" spacing="18">
+            <VBox fillWidth="false" prefHeight="606.0" prefWidth="230.0" styleClass="sidebar">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="12" />
+                  <VBox prefHeight="466.0" prefWidth="191.0" spacing="10" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" spacing="6" style="-fx-padding: 24 0 16 0;">
+                           <children>
+                              <Label style="-fx-text-fill: #4C1D95;                   -fx-font-size: 40px;                   -fx-effect: dropshadow(gaussian, rgba(109, 40, 217, 0.2), 2, 0, 0, 1);" text="💮" />
+                              <Label style="-fx-text-fill: #4C1D95;                   -fx-font-size: 32px;                   -fx-font-weight: 900;                   -fx-font-family: 'Segoe UI';                   -fx-effect: dropshadow(gaussian, rgba(109, 40, 217, 0.3), 4, 0.3, 0, 2);" text="Theraply" />
+                           </children>
+                        </HBox>
+                        <Button styleClass="menu-btn" text="Gestion patients" />
+                        <Button prefHeight="55.0" prefWidth="205.0" styleClass="menu-btn" text="Gestion thérapeutes" />
+                        <Button styleClass="menu-btn" text="Gestion sessions" />
+                        <Button styleClass="menu-btn" text="Gestions rapports" />
+                        <Button styleClass="menu-btn" text="Gestion paiements" />
+                        <Button styleClass="menu-btn" text="Dashboard" />
+                        <Button layoutX="10.0" layoutY="274.0" styleClass="menu-btn" text="LOG OUT " />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+      
+         
+         <!-- LEFT: Client + Therapist info -->
+      <VBox prefHeight="606.0" prefWidth="507.0" spacing="12" styleClass="card">
+      <Label styleClass="section-title" text="Invoice" />
+      
+         
+         <GridPane hgap="8" vgap="8">
+      <columnConstraints>
+      <ColumnConstraints percentWidth="35" />
+      <ColumnConstraints percentWidth="65" />
+      </columnConstraints>
+      
+         
+         <Label text="Invoice #" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <TextField fx:id="invoiceNumberField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+         
+         <Label text="Date" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <TextField fx:id="invoiceNumberField1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+         
+         <Label text="Therapist" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <TextField fx:id="therapistField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      
+         
+         <Label text="Client" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <TextField fx:id="clientField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      
+         
+         <Label text="Notes" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+      <TextArea fx:id="notesArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+      </GridPane>
+      
+         
+         <HBox alignment="CENTER_RIGHT" spacing="8">
+      <Button fx:id="saveBtn" styleClass="btn-secondary" text="Save" />
+      <Button fx:id="exportBtn" styleClass="btn-accent" text="Export" />
+      </HBox>
+      </VBox>
+      
+         
+         <!-- RIGHT: Items table and totals -->
+      <VBox spacing="12" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+      </HBox>
+      </children>
+   </AnchorPane>
+</VBox>

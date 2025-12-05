@@ -1,0 +1,95 @@
+/* MAIN BACKGROUND */
+.anchor-pane {
+    -fx-background-color: linear-gradient(to bottom right, #F2F7FF, #C9DCFF);
+}
+
+/* VBox container */
+.v-box {
+    -fx-padding: 25;
+    -fx-spacing: 25;
+    -fx-background-color: rgba(255, 255, 255, 0.85); /* white allowed */
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.2), 15, 0, 0, 5); /* #9D71E8 @ 20% */
+}
+
+/* HEADER HBOX */
+.h-box {
+    -fx-spacing: 25;
+    -fx-alignment: center-left;
+}
+
+/* PROFILE IMAGE */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.3), 15, 0, 0, 5); /* #9D71E8 @ 30% */
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-color: #BE99FF; /* from palette */
+    -fx-border-width: 2;
+}
+
+/* THERAPIST NAME */
+.label {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-effect: dropshadow(one-pass-box, rgba(157, 113, 232, 0.2), 2, 0, 0, 1);
+}
+
+/* Full Name */
+#fullNameLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9D71E8; /* deep purple accent — only non-white non-gradient fill */
+}
+
+/* Specialty */
+#specialtyLabel {
+    -fx-font-size: 16px;
+    -fx-text-fill: #B2C9FF; /* soft periwinkle-blue */
+    -fx-font-style: italic;
+}
+
+/* Email & Phone Labels */
+#emailLabel, #phoneLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: #C8B6FF; /* matches sidebar — soft but readable */
+}
+
+/* BIO TEXTAREA */
+#bioTextArea {
+    -fx-background-color: rgba(255, 255, 255, 0.9); /* white allowed */
+    -fx-border-color: #C8B6FF;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-font-size: 14px;
+    -fx-text-fill: #9D71E8; /* deep purple for readability */
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.1), 5, 0, 0, 3);
+}
+
+/* BUTTONS */
+.button {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.15), 5, 0, 0, 2);
+    -fx-text-fill: white;
+}
+
+/* EDIT BUTTON — using luminous purple gradient */
+.button#editBtn {
+    -fx-background-color: linear-gradient(to right, #BE99FF, #9D71E8);
+}
+.button#editBtn:hover {
+    -fx-background-color: linear-gradient(to right, #9D71E8, #C8B6FF);
+}
+
+/* CLOSE BUTTON — soft but clear, using cool periwinkle (not red!) */
+.button#closeBtn {
+    -fx-background-color: #9D71E8 ;
+    -fx-text-fill: linear-gradient(to right, #B2C9FF, #C9DCFF);
+}
+.button#closeBtn:hover {
+    -fx-background-color: linear-gradient(to right, #C9DCFF, #F2F7FF);
+    -fx-text-fill: #BE99FF;
+}

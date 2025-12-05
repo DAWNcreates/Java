@@ -1,0 +1,239 @@
+/* ===== SIDEBAR ===== */
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF); /* soft lavender-to-purple gradient */
+    -fx-padding: 24px 18px;
+    -fx-spacing: 16px;
+    -fx-background-radius: 0 28px 28px 0;
+    -fx-effect: dropshadow(gaussian, rgba(167, 139, 250, 0.2), 8, 0, 0, 2);
+}
+
+/* Enhanced logo circle with subtle glow and green touch */
+.logo-circle {
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-background-color: #E0F2FE; /* very soft sky blue (airy) */
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 2px;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+    -fx-text-fill: #0D9488; /* richer teal-green */
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(167, 243, 208, 0.5), 6, 0.3, 0, 0);
+    -fx-translate-y: 0;
+    -fx-transition: -fx-translate-y 0.3s ease-out;
+}
+.logo-circle:hover {
+    -fx-translate-y: -4px; /* gentle "bouncy" lift */
+}
+.menu-btn {
+    -fx-text-fill: #ffffff; /* very soft icy blue-white (airy & clean) */
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
+    -fx-background-color: transparent;
+    -fx-padding: 16px 16px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0; /* no box */
+    -fx-font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+    -fx-opacity: 0.92;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.3), 4, 0.3, 0, 2); /* deep purple shadow */
+    -fx-translate-x: 0;
+    -fx-transition: -fx-text-fill 0.2s, -fx-effect 0.2s, -fx-translate-x 0.2s;
+}
+
+.menu-btn:hover {
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.35), 6, 0.4, 0, 3);
+    -fx-translate-x: 4px; /* subtle "flowy" glide to the right */
+}
+
+/* Highlighted (active) menu item — more prominent shadow + slight boldness */
+.menu-btn:selected,
+.menu-btn:armed {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 600;
+    -fx-opacity: 1;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.5), 8, 0.6, 0, 4);
+    -fx-translate-x: 6px;
+}
+/* Footer: delicate and light */
+.sidebar-footer {
+    -fx-text-fill: #DCFCE7; /* pale green-white */
+    -fx-font-size: 13px;
+    -fx-font-weight: 400;
+    -fx-alignment: center;
+    -fx-opacity: 0.85;
+    -fx-font-family: "Segoe UI", "San Francisco", sans-serif;
+}
+
+/* ================= TOP BAR ================== */
+.user-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9D71E8;
+}
+
+.user-role {
+    -fx-font-size: 12px;
+    -fx-text-fill: #B2C9FF; /* soft periwinkle */
+}
+
+.dropdown-arrow {
+    -fx-font-size: 14px;
+    -fx-text-fill: #9D71E8;
+}
+
+/* ---------------------------------------------------------
+   GENERAL LAYOUT — SOFT, AIRY, PREMIUM
+--------------------------------------------------------- */
+* {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Page Title */
+.page-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #9D71E8;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.25), 8, 0.3, 0, 3);
+}
+
+/* ---------------------------------------------------------
+   TOP BAR — SOFT LAVENDER WITH GLASS-LIKE DEPTH
+--------------------------------------------------------- */
+HBox {
+    -fx-background-radius: 0 0 18 18;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.1), 6, 0, 0, 1);
+}
+
+/* ---------------------------------------------------------
+   BUTTONS — LUMINOUS PURPLE GRADIENTS
+--------------------------------------------------------- */
+.action-btn {
+    -fx-background-color: linear-gradient(to right, #BE99FF, #9D71E8);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24;
+    -fx-background-radius: 14px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.25), 6, 0.3, 0, 3);
+}
+
+.action-btn:hover {
+    -fx-background-color: linear-gradient(to right, #9D71E8, #C8B6FF);
+    -fx-translate-y: -3px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.35), 8, 0.4, 0, 4);
+}
+
+.delete-btn {
+    -fx-background-color: linear-gradient(to right, #B2C9FF, #C9DCFF);
+    -fx-text-fill: #9D71E8;
+    -fx-font-weight: bold;
+    -fx-padding: 10 22;
+    -fx-background-radius: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(178, 201, 255, 0.2), 5, 0.2, 0, 2); /* #B2C9FF shadow */
+}
+
+.delete-btn:hover {
+    -fx-background-color: linear-gradient(to right, #C9DCFF, #F2F7FF);
+    -fx-text-fill: #BE99FF;
+    -fx-translate-y: -3px;
+}
+
+/* ---------------------------------------------------------
+   TABLEVIEW — DARK PURPLE WITH HIGH CONTRAST
+--------------------------------------------------------- */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-control-inner-background: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #8B5CF6);
+    -fx-background-radius: 12 12 0 0;
+    -fx-padding: 8;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Table cell text color */
+.table-view .table-cell {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-padding: 12 8;
+    -fx-alignment: center-left;
+}
+
+/* Row styling - Dark purple alternating rows */
+.table-row-cell {
+    -fx-background-color: #7C3AED; /* Rich dark purple */
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #8B5CF6; /* Slightly lighter purple for alternating */
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #A78BFA; /* Lighter purple on hover */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #BE99FF !important; /* Your brand purple */
+}
+
+/* Selected cell text remains white */
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Empty table placeholder */
+.table-view .placeholder .label {
+    -fx-text-fill: #9D71E8;
+    -fx-font-size: 14px;
+}
+
+/* ---------------------------------------------------------
+   SEARCH BOX — MINIMAL & CLEAN
+--------------------------------------------------------- */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #C8B6FF;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 8 12;
+    -fx-text-fill: #9D71E8;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: #9D71E8;
+    -fx-border-width: 2;
+}
+
+/* ---------------------------------------------------------
+   CENTER PANEL — LUMINOUS WHITE CARD
+--------------------------------------------------------- */
+.center VBox {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20px;
+    -fx-padding: 28px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.12), 18, 0.2, 0, 4);
+}
