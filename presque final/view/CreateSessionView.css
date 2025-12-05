@@ -1,0 +1,280 @@
+/* ========================================
+   CREATE SESSION DIALOG - MODERN STYLE (Identique à AddPatient)
+   ======================================== */
+
+/* ===== DIALOG STRUCTURE ===== */
+.dialog-header {
+    -fx-background-color: linear-gradient(to right, #9D71E8, #BE99FF);
+    -fx-padding: 20px 30px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.3), 8, 0.3, 0, 3);
+}
+
+.dialog-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+    -fx-text-fill: white;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-close {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 50%;
+    -fx-min-width: 35px;
+    -fx-min-height: 35px;
+    -fx-max-width: 35px;
+    -fx-max-height: 35px;
+    -fx-cursor: hand;
+}
+
+.btn-close:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.dialog-content {
+    -fx-background-color: #F8F9FF;
+}
+
+.dialog-footer {
+    -fx-background-color: white;
+    -fx-padding: 20px 30px;
+    -fx-border-color: #E0E7FF;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-grid {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 25px;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.08), 8, 0.2, 0, 2);
+}
+
+.label-required, .label-optional {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #5A4A8A;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.label-optional {
+    -fx-text-fill: #7E6E9E;
+}
+
+/* ===== TOGGLES ===== */
+.toggle-btn {
+    -fx-pref-width: 120;
+    -fx-pref-height: 40;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-border-color: #C9DCFF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-text-fill: #5A4A8A;
+}
+
+.toggle-btn:selected {
+    -fx-background-color: #9D71E8;
+    -fx-border-color: #9D71E8;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.3), 8, 0.4, 0, 2);
+}
+
+.toggle-btn:hover {
+    -fx-border-color: #9D71E8;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* ===== INPUT FIELDS ===== */
+.input-field {
+    -fx-background-color: #F8F9FF;
+    -fx-border-color: #C9DCFF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 12px 16px;
+    -fx-prompt-text-fill: #B2C9FF;
+    -fx-text-fill: #2D3748;
+}
+
+.input-field:hover {
+    -fx-border-color: #9D71E8;
+    -fx-background-color: white;
+}
+
+.input-field:focused {
+    -fx-border-color: #9D71E8;
+    -fx-border-width: 2px;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.25), 8, 0.4, 0, 2);
+}
+
+.textarea-field {
+    -fx-min-height: 100px;
+    -fx-max-height: 100px;
+}
+
+/* ComboBox & DatePicker */
+.input-field.combo-box,
+.input-field.date-picker {
+    -fx-background-color: #F8F9FF;
+}
+
+.input-field.combo-box:hover,
+.input-field.date-picker:hover {
+    -fx-background-color: white;
+}
+
+/* ===== RADIO BUTTONS ===== */
+.radio-btn {
+    -fx-text-fill: #5A4A8A;
+    -fx-font-size: 14px;
+    -fx-padding: 0 8;
+}
+
+.radio-btn:selected .radio {
+    -fx-background-color: #9D71E8;
+    -fx-border-color: #9D71E8;
+}
+
+.radio-btn .radio {
+    -fx-background-color: white;
+    -fx-border-color: #C9DCFF;
+    -fx-border-width: 1.5px;
+}
+
+/* ===== MESSAGES ===== */
+.message {
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 12px 18px;
+    -fx-background-radius: 10px;
+    -fx-wrap-text: true;
+}
+
+.error {
+    -fx-background-color: #FFE4E8;
+    -fx-text-fill: #DC2626;
+    -fx-border-color: #FECDD3;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+}
+
+.success {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #059669;
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #9D71E8, #8A5FD5);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-padding: 14px 28px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(157, 113, 232, 0.4), 8, 0.4, 0, 3);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #8A5FD5, #7C3AED);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(124, 58, 237, 0.6), 12, 0.5, 0, 4);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #6D28D9;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.btn-secondary {
+    -fx-background-color: #E7C6FF;
+    -fx-text-fill: #5A4A8A;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-padding: 14px 28px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(231, 198, 255, 0.4), 6, 0.3, 0, 2);
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #D8B4FD;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(216, 180, 253, 0.6), 10, 0.4, 0, 3);
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: #C9A0FF;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.btn-cancel {
+    -fx-background-color: #FFD6FF;
+    -fx-text-fill: #9D71E8;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-padding: 14px 28px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255, 214, 255, 0.4), 6, 0.3, 0, 2);
+}
+
+.btn-cancel:hover {
+    -fx-background-color: #FFC0E6;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(255, 192, 230, 0.6), 10, 0.4, 0, 3);
+}
+
+.btn-cancel:pressed {
+    -fx-background-color: #FFB0DD;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* ===== SCROLLBAR ===== */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #F2F7FF;
+    -fx-background-radius: 8px;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #BE99FF;
+    -fx-background-radius: 8px;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #9D71E8;
+}

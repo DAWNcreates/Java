@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="523.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom right, #F2F7FF, #E7C6FF);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinique.controller.LoginController">
+    
+    <!-- Partie Gauche - Logo et Branding -->
+    <left>
+        <VBox alignment="CENTER" prefWidth="350.0" spacing="20.0" style="-fx-background-color: linear-gradient(to bottom, #9D71E8, #BE99FF);">
+            <padding>
+                <Insets bottom="40" left="40" right="40" top="40" />
+            </padding>
+         <ImageView fitHeight="93.0" fitWidth="277.0">
+            <image>
+               <Image url="@images/logoo.png" />
+            </image>
+         </ImageView>
+            
+           
+            
+            <!-- Tagline -->
+            <Label style="-fx-text-fill: rgba(255,255,255,0.9); -fx-font-size: 16px; -fx-text-alignment: center;" text="Soins Thérapeutiques Doux" wrapText="true" />
+            
+            <!-- Icônes décoratives -->
+            <VBox alignment="CENTER" spacing="15.0">
+                <VBox.margin>
+                    <Insets top="40" />
+                </VBox.margin>
+                
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Label style="-fx-font-size: 24px;" text="🌸" />
+                    <Label style="-fx-text-fill: white; -fx-font-size: 14px;" text="Accompagnement bienveillant" />
+                </HBox>
+                
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Label style="-fx-font-size: 24px;" text="💬" />
+                    <Label style="-fx-text-fill: white; -fx-font-size: 14px;" text="Thérapie en ligne" />
+                </HBox>
+                
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Label style="-fx-font-size: 24px;" text="✨" />
+                    <Label style="-fx-text-fill: white; -fx-font-size: 14px;" text="Croissance personnelle" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <!-- Partie Droite - Formulaire de connexion -->
+    <center>
+        <VBox alignment="CENTER" spacing="25.0" style="-fx-background-color: white;">
+            <padding>
+                <Insets bottom="60" left="50" right="50" top="60" />
+            </padding>
+            
+            <!-- Titre -->
+            <VBox alignment="CENTER_LEFT" spacing="5.0">
+                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Connexion" />
+                <Label style="-fx-font-size: 14px; -fx-text-fill: #7E6E9E;" text="Accédez à votre espace thérapeutique" />
+            </VBox>
+            
+            <!-- Champ Username -->
+            <VBox spacing="8.0">
+                <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Nom d'utilisateur" />
+                <TextField fx:id="usernameField" prefHeight="40.0" prefWidth="350.0" promptText="Entrez votre nom d'utilisateur" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-font-size: 14px;" />
+            </VBox>
+            
+            <!-- Champ Password -->
+            <VBox spacing="8.0">
+                <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="Mot de passe" />
+                <PasswordField fx:id="passwordField" prefHeight="40.0" prefWidth="350.0" promptText="Entrez votre mot de passe" style="-fx-border-color: #C9DCFF; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-font-size: 14px;" />
+            </VBox>
+            
+            <!-- Message d'erreur -->
+            <Label fx:id="errorLabel" maxWidth="350.0" style="-fx-font-size: 13px; -fx-padding: 10; -fx-background-color: #FFD6FF; -fx-background-radius: 8;" textFill="#9D71E8" visible="false" wrapText="true" />
+            
+            <!-- Bouton de connexion -->
+            <Button fx:id="loginButton" maxWidth="350.0" onAction="#handleLogin" prefHeight="45.0" style="-fx-background-color: linear-gradient(to right, #9D71E8, #BE99FF); -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 10; -fx-cursor: hand;" text="Se Connecter">
+                <VBox.margin>
+                    <Insets top="10" />
+                </VBox.margin>
+            </Button>
+            
+            <!-- Lien mot de passe oublié -->
+            <Hyperlink onAction="#handleForgotPassword" style="-fx-text-fill: #9D71E8; -fx-font-size: 13px;" text="Mot de passe oublié ?" />
+        </VBox>
+    </center>
+</BorderPane>

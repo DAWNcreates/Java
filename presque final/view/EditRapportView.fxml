@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="650.0" prefWidth="750.0" stylesheets="@EditPatientView.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinique.controller.EditRapportController">
+
+    <!-- HEADER (SANS SIDEBAR) -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="dialog-header">
+            <VBox spacing="3">
+                <Label styleClass="dialog-title" text="✏ Modifier Rapport" />
+                <Label fx:id="rapportIdLabel" styleClass="dialog-subtitle" text="Rapport ID: #RAP-001" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleCancel" styleClass="btn-close" text="✕" />
+        </HBox>
+    </top>
+
+    <!-- CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="20.0" styleClass="dialog-content">
+                <padding>
+                    <Insets bottom="20" left="30" right="30" top="20" />
+                </padding>
+
+                <GridPane hgap="20" styleClass="form-grid" vgap="15">
+                    
+                    <!-- Session -->
+                    <Label styleClass="field-label required" text="Session" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="sessionCombo" maxWidth="Infinity" promptText="Sélectionner une session" styleClass="input-field" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                    <!-- Type de Thérapie -->
+                    <Label styleClass="field-label required" text="Type de Thérapie" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="typeTherapieCombo" maxWidth="Infinity" promptText="Sélectionner un type" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <!-- Résumé de Session (full width) -->
+                    <Label styleClass="field-label required" text="Résumé de la Session" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                    <TextArea fx:id="resumeArea" prefHeight="120.0" promptText="Décrivez brièvement le déroulement de la session..." styleClass="input-field textarea-field" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+
+                    <!-- Observations et Analyses (full width) -->
+                    <Label styleClass="field-label required" text="Observations et Analyses" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                    <TextArea fx:id="observationsArea" prefHeight="120.0" promptText="Notez vos observations cliniques, l'état émotionnel du patient..." styleClass="input-field textarea-field" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+
+                    <!-- Recommandations (full width) -->
+                    <Label styleClass="field-label" text="Recommandations" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                    <TextArea fx:id="recommandationsArea" prefHeight="100.0" promptText="Proposez des exercices, des objectifs pour la prochaine session..." styleClass="input-field textarea-field" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="330" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="330" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <!-- Messages -->
+                <Label fx:id="errorLabel" styleClass="message error" visible="false" wrapText="true" />
+                <Label fx:id="successLabel" styleClass="message success" visible="false" wrapText="true" />
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="15.0" styleClass="dialog-footer">
+            <Button onAction="#handleSave" prefWidth="160" styleClass="btn-primary" text="💾Enregistrer" />
+            <Button onAction="#handleReset" prefWidth="160" styleClass="btn-secondary" text="🔄Réinitialiser" />
+            <Button onAction="#handleCancel" prefWidth="130" styleClass="btn-cancel" text="Annuler" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" stylesheets="@PatientDossierView.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinique.controller.PatientDossierController">
+
+    <!-- HEADER -->
+    <top>
+        <VBox styleClass="dossier-header">
+            <!-- Barre de titre -->
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="title-bar">
+                <Label styleClass="dossier-title" text="📋 Dossier Médical" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleClose" styleClass="btn-close" text="✕" />
+            </HBox>
+
+            <!-- Info Patient -->
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="patient-info">
+                <!-- Avatar -->
+                <Label styleClass="patient-avatar" text="👤" />
+
+                <!-- Details -->
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label fx:id="patientNameLabel" styleClass="patient-name" text="Marie Dubois" />
+                        <Label styleClass="badge-active" text="Actif" />
+                    </HBox>
+                    <HBox spacing="15">
+                        <Label fx:id="emailLabel" styleClass="patient-detail" text="📧 marie@email.com" />
+                        <Label fx:id="phoneLabel" styleClass="patient-detail" text="📱 +216 12 345 678" />
+                        <Label fx:id="idLabel" styleClass="patient-detail" text="ID: #PAT-248" />
+                    </HBox>
+                </VBox>
+
+                <!-- Stats -->
+                <HBox spacing="20" styleClass="quick-stats">
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label styleClass="stat-label" text="Sessions" />
+                        <Label fx:id="sessionsCount" styleClass="stat-value" text="24" />
+                    </VBox>
+                    <Separator orientation="VERTICAL" />
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label styleClass="stat-label" text="Rapports" />
+                        <Label fx:id="reportsCount" styleClass="stat-value" text="18" />
+                    </VBox>
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- CONTENU -->
+    <center>
+        <TabPane styleClass="content-tabs" tabClosingPolicy="UNAVAILABLE">
+            
+            <!-- TAB INFORMATIONS MÉDICALES -->
+            <Tab text="🏥 Médical">
+                <ScrollPane fitToWidth="true" styleClass="tab-scroll">
+                    <VBox spacing="15" styleClass="tab-content">
+                        <padding><Insets bottom="15" left="20" right="20" top="15" /></padding>
+
+                        <!-- Informations Médicales -->
+                        <VBox spacing="12" styleClass="info-card">
+                            <Label styleClass="section-title" text="Informations Médicales" />
+                            <Separator styleClass="card-separator" />
+                            
+                            <HBox spacing="10">
+                                <Label styleClass="info-label" text="Groupe sanguin:" />
+                                <Label styleClass="info-value blood" text="A+" />
+                            </HBox>
+                            
+                            <VBox spacing="8">
+                                <Label styleClass="info-label" text="Allergies:" />
+                                <Label styleClass="info-value alert" text="• Pénicilline (sévère)" />
+                                <Label styleClass="info-value alert" text="• Arachides" />
+                            </VBox>
+                            
+                            <VBox spacing="8">
+                                <Label styleClass="info-label" text="Antécédents:" />
+                                <TextArea editable="false" prefHeight="100" styleClass="readonly-textarea" text="• Anxiété chronique (2020)&#10;• Épisodes dépressifs récurrents&#10;• Troubles du sommeil&#10;• Historique familial troubles anxieux" wrapText="true" />
+                            </VBox>
+                        </VBox>
+
+                        <!-- Contact d'Urgence -->
+                        <VBox spacing="12" styleClass="info-card">
+                            <Label styleClass="section-title urgent" text="Contact d'Urgence" />
+                            <Separator styleClass="card-separator" />
+                            
+                            <HBox spacing="10">
+                                <Label styleClass="info-label" text="Nom:" />
+                                <Label styleClass="info-value" text="Pierre Dubois" />
+                            </HBox>
+                            
+                            <HBox spacing="10">
+                                <Label styleClass="info-label" text="Relation:" />
+                                <Label styleClass="info-value" text="Conjoint" />
+                            </HBox>
+                            
+                            <HBox spacing="10">
+                                <Label styleClass="info-label" text="Téléphone:" />
+                                <Label styleClass="info-value" text="+216 98 765 432" />
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <!-- TAB HISTORIQUE -->
+            <Tab text="📋 Historique">
+                <VBox spacing="15" styleClass="tab-content">
+                    <padding><Insets bottom="15" left="20" right="20" top="15" /></padding>
+                    
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="section-title" text="Sessions Thérapeutiques" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label styleClass="info-label" text="Total: 24 sessions" />
+                    </HBox>
+                    
+                    <TableView fx:id="sessionsTable" styleClass="sessions-table" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn prefWidth="100" text="Date" />
+                            <TableColumn prefWidth="80" text="Type" />
+                            <TableColumn prefWidth="140" text="Thérapeute" />
+                            <TableColumn prefWidth="70" text="Durée" />
+                            <TableColumn prefWidth="200" text="Thème" />
+                            <TableColumn prefWidth="100" text="Statut" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- TAB RAPPORTS -->
+            <Tab text="📝 Rapports">
+                <VBox spacing="15" styleClass="tab-content">
+                    <padding><Insets bottom="15" left="20" right="20" top="15" /></padding>
+                    
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="section-title" text="Documents et Rapports" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button styleClass="btn-add-report" text="+ Nouveau Rapport" />
+                    </HBox>
+                    
+                    <TableView fx:id="documentsTable" styleClass="documents-table" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn prefWidth="120" text="Type" />
+                            <TableColumn prefWidth="280" text="Titre" />
+                            <TableColumn prefWidth="110" text="Date" />
+                            <TableColumn prefWidth="150" text="Auteur" />
+                            <TableColumn prefWidth="140" text="Actions" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+</BorderPane>

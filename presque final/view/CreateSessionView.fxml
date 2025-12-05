@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="650.0" prefWidth="700.0" stylesheets="@CreateSessionView.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinique.controller.CreateSessionController">
+
+    <!-- HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="dialog-header">
+            <Label styleClass="dialog-title" text="Créer une Session" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleClose" styleClass="btn-close" text="✕" />
+        </HBox>
+    </top>
+
+    <!-- FORMULAIRE CENTRAL -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="24.0" styleClass="dialog-content">
+                <padding>
+                    <Insets bottom="20" left="30" right="30" top="20" />
+                </padding>
+
+                <!-- ToggleButtons - Type de session -->
+                <HBox alignment="CENTER" spacing="12.0">
+                    <ToggleButton fx:id="chatToggle" styleClass="toggle-btn" text="💬 Chat">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="typeGroup" />
+                        </toggleGroup>
+                    </ToggleButton>
+                    <ToggleButton fx:id="videoToggle" styleClass="toggle-btn" text="📹 Vidéo" toggleGroup="$typeGroup" />
+                    <ToggleButton fx:id="iaToggle" styleClass="toggle-btn" text="🤖 IA" toggleGroup="$typeGroup" />
+                </HBox>
+
+                <!-- Grille formulaire -->
+                <GridPane hgap="24" styleClass="form-grid" vgap="16">
+                    <!-- Patient -->
+                    <Label styleClass="label-required" text="Patient *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="patientCombo" maxWidth="Infinity" promptText="Sélectionner un patient" styleClass="input-field" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                    <!-- Thérapeute -->
+                    <Label styleClass="label-required" text="Thérapeute *" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="therapeuteCombo" maxWidth="Infinity" promptText="Sélectionner un thérapeute" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <!-- Date -->
+                    <Label styleClass="label-required" text="Date *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <DatePicker fx:id="datePicker" maxWidth="Infinity" promptText="Sélectionner une date" styleClass="input-field" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+                    <!-- Heure -->
+                    <Label styleClass="label-required" text="Heure *" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="heureCombo" maxWidth="Infinity" promptText="Sélectionner l'heure" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <!-- Durée -->
+                    <Label styleClass="label-required" text="Durée *" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                    <HBox spacing="20" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                        <RadioButton fx:id="duree30" selected="true" styleClass="radio-btn" text="30 min" />
+                        <RadioButton fx:id="duree45" styleClass="radio-btn" text="45 min" />
+                        <RadioButton fx:id="duree60" styleClass="radio-btn" text="60 min" />
+                        <RadioButton fx:id="duree90" styleClass="radio-btn" text="90 min" />
+                    </HBox>
+
+                    <!-- Motif -->
+                    <Label styleClass="label-optional" text="Motif de consultation" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                    <TextArea fx:id="motifArea" prefHeight="100" promptText="Décrivez le motif..." styleClass="input-field textarea-field" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="280" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="280" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <!-- Messages -->
+                <Label fx:id="errorLabel" styleClass="message error" visible="false" wrapText="true" />
+                <Label fx:id="successLabel" styleClass="message success" visible="false" wrapText="true" />
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="15.0" styleClass="dialog-footer">
+            <Button onAction="#handleCreate" prefWidth="160" styleClass="btn-primary" text="✅ Créer" />
+            <Button onAction="#handleReset" prefWidth="160" styleClass="btn-secondary" text="🔄 Réinitialiser" />
+            <Button onAction="#handleCancel" prefHeight="42.0" prefWidth="130.0" styleClass="btn-cancel" text="Annuler" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

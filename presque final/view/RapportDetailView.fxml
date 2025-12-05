@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="800.0" stylesheets="@PatientDossierView.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="clinique.controller.RapportDetailController">
+
+    <!-- HEADER (SANS SIDEBAR) -->
+    <top>
+        <VBox styleClass="dossier-header">
+            <!-- Barre de titre -->
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="title-bar">
+                <Label styleClass="dossier-title" text="📋 Détails du Rapport" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleBack" styleClass="btn-close" text="✕" />
+            </HBox>
+
+            <!-- En-tête Rapport -->
+            <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: white; -fx-padding: 12 30;">
+                <!-- Avatar -->
+                <Label style="-fx-font-size: 40px; -fx-background-color: #F2F7FF; -fx-padding: 12; -fx-background-radius: 25;" text="📋" />
+
+                <!-- Info principale -->
+                <VBox spacing="3" HBox.hgrow="ALWAYS">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label fx:id="rapportTitleLabel" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5A4A8A;" text="Rapport de Session" />
+                        <Label fx:id="typeLabel" style="-fx-font-size: 11px; -fx-padding: 3 10; -fx-background-color: #E7C6FF; -fx-text-fill: #9D71E8; -fx-background-radius: 10; -fx-font-weight: bold;" text="TCC" />
+                    </HBox>
+                    <HBox spacing="15">
+                        <Label fx:id="dateLabel" style="-fx-font-size: 11px; -fx-text-fill: #7E6E9E;" text="📅 12/12/2024" />
+                        <Label fx:id="sessionIdLabel" style="-fx-font-size: 11px; -fx-text-fill: #7E6E9E;" text="🔗 Session #S-248" />
+                        <Label fx:id="rapportIdLabel" style="-fx-font-size: 11px; -fx-text-fill: #7E6E9E;" text="ID: #RAP-001" />
+                    </HBox>
+                </VBox>
+
+                <!-- Stats rapides -->
+                <HBox spacing="15">
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label style="-fx-font-size: 9px; -fx-text-fill: #7E6E9E;" text="Patient" />
+                        <Label fx:id="patientStatLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #9D71E8;" text="M. Dubois" />
+                    </VBox>
+                    <Separator orientation="VERTICAL" prefHeight="30" />
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label style="-fx-font-size: 9px; -fx-text-fill: #7E6E9E;" text="Thérapeute" />
+                        <Label fx:id="therapeuteStatLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #BE99FF;" text="Dr. Martin" />
+                    </VBox>
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="tab-scroll">
+            <VBox spacing="15" styleClass="tab-content">
+                <padding><Insets bottom="15" left="20" right="20" top="15" /></padding>
+
+                <!-- Section Informations générales -->
+                <VBox spacing="12" styleClass="info-card">
+                    <Label styleClass="section-title" text="Informations Générales" />
+                    <Separator styleClass="card-separator" />
+                    <HBox spacing="30">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <HBox spacing="8">
+                                <Label styleClass="info-label" text="Patient:" />
+                                <Label fx:id="patientLabel" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="Marie Dubois" />
+                            </HBox>
+                            <HBox spacing="8">
+                                <Label styleClass="info-label" text="Thérapeute:" />
+                                <Label fx:id="therapeuteLabel" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="Dr. Jean Martin" />
+                            </HBox>
+                        </VBox>
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <HBox spacing="8">
+                                <Label styleClass="info-label" text="Date Session:" />
+                                <Label fx:id="dateSessionLabel" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="12/12/2024" />
+                            </HBox>
+                            <HBox spacing="8">
+                                <Label styleClass="info-label" text="Type Session:" />
+                                <Label fx:id="typeSessionLabel" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="Vidéo" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Section Résumé -->
+                <VBox spacing="10" styleClass="info-card">
+                    <Label styleClass="section-title" text="Résumé de la Session" />
+                    <TextArea fx:id="resumeArea" editable="false" prefRowCount="5"
+                              style="-fx-border-color: #C9DCFF; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: #fafafa; -fx-font-size: 12px;"
+                              wrapText="true" />
+                </VBox>
+
+                <!-- Section Observations -->
+                <VBox spacing="10" styleClass="info-card">
+                    <Label styleClass="section-title" text="🔍 Observations et Analyses" />
+                    <TextArea fx:id="observationsArea" editable="false" prefRowCount="6"
+                              style="-fx-border-color: #C9DCFF; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: #fafafa; -fx-font-size: 12px;"
+                              wrapText="true" />
+                </VBox>
+
+                <!-- Section Recommandations -->
+                <VBox spacing="10" styleClass="info-card">
+                    <Label styleClass="section-title" text="Recommandations" />
+                    <TextArea fx:id="recommandationsArea" editable="false" prefRowCount="4"
+                              style="-fx-border-color: #C9DCFF; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: #fafafa; -fx-font-size: 12px;"
+                              wrapText="true" />
+                </VBox>
+
+                <!-- Boutons d'action -->
+                <HBox alignment="CENTER" spacing="15">
+                    <Button fx:id="editButton" onAction="#handleEdit" style="-fx-background-color: #E7C6FF;" text="Modifier" />
+                    <Button fx:id="deleteButton" onAction="#handleDelete" style="-fx-background-color: #FFD6FF;" text= "Supprimer"/>
+                    <Button fx:id="pdfButton" onAction="#handlePDF" style="-fx-background-color: #B2C9FF;" text="PDF"/>
+                    <Button fx:id="printButton" onAction="#handlePrint" style="-fx-background-color: #C9DCFF;" text="Imprimer"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
